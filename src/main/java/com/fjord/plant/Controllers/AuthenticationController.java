@@ -1,21 +1,22 @@
 package com.fjord.plant.Controllers;
 
+import javax.validation.Valid;
+
 import com.fjord.plant.Model.User;
-import com.fjord.plant.Repository.UserRepository;
+import com.fjord.plant.Services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class AuthenticationController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     // TODO: the view's name will most likely change
 
@@ -29,13 +30,34 @@ public class AuthenticationController {
         return result;
     }
 
-    @PostMapping(path = "/login")
-    public ModelAndView authenticate(@ModelAttribute User user, RedirectAttributes redirectAttributes) {
+    @GetMapping(value = "/register")
+    public ModelAndView register() {
+        ModelAndView result = new ModelAndView();
+        User user = new User();
+        result.addObject("user", user);
+        result.setViewName("register");
+        return result;
+    }
 
-        // TODO : check credentials
+    @PostMapping(value = "/register")
+    public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
 
-        redirectAttributes.addFlashAttribute(user);
-        return new ModelAndView("redirect:/homepage");
+        ModelAndView result = new ModelAndView();
 
+        User userExists = userService.findUserByName(user.getName());
+        if (userExists != null) {
+            bindingResult.rejectValue("name", "error.user",
+                    "There is already a user registered with the user name provided");
+        }
+        if (bindingResult.hasErrors()) {
+            result.setViewName("register");
+        } else {
+            userService.saveUser(user);
+            result.addObject("successMessage", "User has been registered successfully");
+            result.addObject("user", new User());
+            result.setViewName("register");
+        }
+
+        return result;
     }
 }

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   private String name;
@@ -19,7 +19,6 @@ public class User {
 
   private String password;
 
-  
   public Integer getId() {
     return id;
   }
@@ -51,5 +50,5 @@ public class User {
   public void setPassword(String password) {
     this.password = password;
   }
-  
+
 }
