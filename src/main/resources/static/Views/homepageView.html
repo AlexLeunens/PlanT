@@ -2,20 +2,22 @@
 <html xmlns:th="https://www.thymeleaf.org"></html>
 
 <head>
-    <title>Bienvenue sur Plan-T</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bienvenue sur Plan-T</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
 
-    <div id="main">
-        <div class="row">
-            <p>Welcome ! This is the homepage</p>
-            
-            Authenticated as <span sec:authentication="name"></span>
+	<div id="main">
+		<div class="row">
+			<p>Welcome ! This is the homepage</p>
 
-        </div>
-    </div>
+			Authenticated as <span sec:authentication="name"></span>
+
+		</div>
+	</div>
+	<div th:insert="templates/footer :: footer"></div>
+
 </body>
 
 </html>
