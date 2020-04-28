@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        User user = userService.findUserByName(name);
+        User user = userService.findUserByEmail(name);
 
         return buildUserForAuthentication(user);
     }
@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UserDetails buildUserForAuthentication(User user) {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>(); // for now, we don't have roles
 
-        return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), true, true,
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), true, true,
                 true, true, grantedAuthorities);
     }
 }

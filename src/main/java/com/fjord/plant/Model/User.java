@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "user")
 public class User {
@@ -19,6 +18,8 @@ public class User {
   private String email;
 
   private String password;
+
+  private boolean isVerified = false;
 
   public Integer getId() {
     return id;
@@ -50,6 +51,14 @@ public class User {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public Boolean getisVerified() {
+    return isVerified;
+  }
+
+  public void setisVerified(Boolean isVerified) {
+    this.isVerified = isVerified;
   }
 
 }
