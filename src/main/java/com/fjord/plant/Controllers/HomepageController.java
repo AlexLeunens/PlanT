@@ -10,15 +10,53 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomepageController {
 
-    // TODO: the view's name will most likely change
+	@GetMapping(value = "/homepage")
+	public ModelAndView displayHomepage(@ModelAttribute User user) {
 
-    @GetMapping(value = "/homepage")
-    public ModelAndView display(@ModelAttribute User user) {
+		ModelAndView result = new ModelAndView();
+		result.addObject(user);
+		result.setViewName("homepageView");
 
-        ModelAndView result = new ModelAndView();
-        result.addObject(user);
-        result.setViewName("homepageView");
+		return result;
+	}
 
-        return result;
-    }
+	@GetMapping(value = "/jardin")
+	public ModelAndView displayJardin(@ModelAttribute User user) {
+
+		ModelAndView result = new ModelAndView();
+		result.addObject(user);
+		result.setViewName("jardin");
+
+		return result;
+	}
+
+	@GetMapping(value = "/arrosage")
+	public ModelAndView displayArrosage(@ModelAttribute User user) {
+
+		ModelAndView result = new ModelAndView();
+		result.addObject(user);
+		result.setViewName("Arrosage");
+
+		return result;
+	}
+
+	@GetMapping(value = "/arrosage")
+	public ModelAndView displayCours(@ModelAttribute User user) {
+
+		ModelAndView result = new ModelAndView();
+		result.addObject(user);
+		result.setViewName("cours");
+
+		return result;
+	}
+
+	@GetMapping(value = "/moncompte")
+	public ModelAndView displayMonCompte(@ModelAttribute User user) {
+
+		ModelAndView result = new ModelAndView();
+		result.addObject(user);
+		result.setViewName("moncompte");
+
+		return result;
+	}
 }

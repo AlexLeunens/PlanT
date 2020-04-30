@@ -1,0 +1,166 @@
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>PlanT - Accueil</title>
+<link rel="icon" href="./Images/icone.png">
+
+<!-- Boostrap -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+	integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+	crossorigin="anonymous">
+
+<!-- CSS page et sidebar -->
+<link rel="stylesheet" href="./Styles/MonCompte.css">
+
+<!-- Fonts & icons -->
+<script defer
+	src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+	integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+	crossorigin="anonymous"></script>
+<script defer
+	src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+	integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+	integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+	crossorigin="anonymous"></script>
+
+<!-- Jquery -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="./Scripts/scroll-down.js"></script>
+<script src="./Scripts/ScrollSidebarMenu.js"></script>
+<script src="./Scripts/DateAccueil.js"></script>
+<script src="./Scripts/WeatherAPI.js"></script>
+<script src="./Scripts/MonCompte.js"></script>
+
+
+<!-- TO MOVE IN SIDEBAR -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#sidebarCollapse').on('click', function() {
+			$('#sidebar').toggleClass('active');
+		});
+	});
+</script>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		
+		<div th:insert="templates/Sidebar :: sidebar"></div>
+
+		<!-- Page Content  -->
+		<div id="content">
+
+			<div>
+				<div class="container">
+
+					<div class="row Initiale">
+						<div class="col-7">
+							<form id="myForm">
+								<div class="fullBox">Mes informations</div>
+								<div class="emptyBox">
+
+									<div class="switchs2">Raphael Caillon</div>
+									<div class="switchs">
+										<input class="formInput" type="text" id="fname" name="fname"
+											value="Raphael"> <input class="formInput" type="text"
+											id="lname" name="fname" value="Caillon"><br>
+									</div>
+
+									<div class="switchs2">Né(e) le 11 Décembre 1998</div>
+									<div class="switchs">
+										Né(e) le <input class="formInput" type="date"
+											value="1998-12-11" id="birth" name="fname"
+											value="11 Décembre 1998"><br>
+									</div>
+
+									<hr>
+									<div>raphael.caillon@isep.fr</div>
+
+									<div class="switchs2">Mot de passe</div>
+									<div class="switchs">
+
+										<input class="formInput pwdInput" type="password" id="pwd1"
+											name="fname" value="Lorem Ipsum Dolor"> <input
+											class="formInput pwdInput" type="password" id="pwd2"
+											name="fname" value="Lorem Ipsum"> <img
+											src="../Images/eye.png" id="visibility"
+											onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" />
+										<img src="../Images/cross.png" id="same"
+											onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" />
+
+										<br>
+									</div>
+
+									<div class="switchs2">Abonné aux nouvelles</div>
+									<div class="switchs">
+										<input type="checkbox" id="Nouvelles" name="Nouvelles"
+											value="Subscribed"> <label for="fruit1">&nbsp;Abonné
+											aux nouvelles</label>
+									</div>
+
+									<div class="switchs2">Rappels arrosage</div>
+									<div class="switchs">
+										<input type="checkbox" id="Rappels" name="Rappels"
+											value="Rappels arrosage"> <label for="fruit1">
+											&nbsp;Rappels arrosage</label>
+									</div>
+
+									<hr>
+
+									<div>Crée le 12 Janvier 2020</div>
+
+
+								</div>
+								<div class="fullBox">
+									<button type="button" id="editButton" class="neutralButton"
+										onclick="switchOnOff()">Edit</button>
+									<input type="button" class="neutralButton switchs right"
+										value="Update">
+								</div>
+							</form>
+						</div>
+
+
+						<div class="col-5">
+							<div class="fullBox">Ma participation</div>
+							<div class="emptyBox">
+								<div>Plantations : 4</div>
+								<hr>
+								<div>Arrosages : 4</div>
+								<hr>
+								<div>Cours suivi : 18/18</div>
+
+							</div>
+
+							<div class="fullBox Initiale">Paramètres</div>
+							<div class="emptyBox">
+								<div>
+									<a href="something" class="button6">Devenir admin</a>
+								</div>
+								<hr>
+								<div>
+									<a href="something" class="button6">Supprimer mon compte</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
