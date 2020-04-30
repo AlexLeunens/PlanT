@@ -40,16 +40,6 @@ public class HomepageController {
 		return result;
 	}
 
-	@GetMapping(value = "/arrosage")
-	public ModelAndView displayCours(@ModelAttribute User user) {
-
-		ModelAndView result = new ModelAndView();
-		result.addObject(user);
-		result.setViewName("cours");
-
-		return result;
-	}
-
 	@GetMapping(value = "/moncompte")
 	public ModelAndView displayMonCompte(@ModelAttribute User user) {
 
