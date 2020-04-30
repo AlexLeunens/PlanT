@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomepageController {
 
-	@GetMapping(value = "/homepage")
+	@GetMapping(value = {"/homepage",""})
 	public ModelAndView displayHomepage(@ModelAttribute User user) {
 
 		ModelAndView result = new ModelAndView();
