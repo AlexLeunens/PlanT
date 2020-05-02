@@ -1,3 +1,4 @@
+
 function switchOnOff() {
 	var s1 = document.getElementsByClassName('switchs');
 	var s2 = document.getElementsByClassName('switchs2');
@@ -18,21 +19,26 @@ function switchOnOff() {
 
 }
 function mouseoverPass() {
-	var obj1 = document.getElementById('pwd1');
-	var obj2 = document.getElementById('pwd2');
-	obj1.type = "text";
-	obj2.type = "text";
+	document.getElementById('pwd1').type = "text";
+	document.getElementById('pwd2').type = "text";
 
 }
 function mouseoutPass(obj) {
-	var obj1 = document.getElementById('pwd1');
-	var obj2 = document.getElementById('pwd2');
-	obj1.type = "password";
-	obj2.type = "password";
+	document.getElementById('pwd1').type = "password";
+	document.getElementById('pwd2').type = "password";
 }
-if (this.getField("pwd1").value == this.getField("pwd2").value) {
-	document.getElementById("same").src = "../Images/check.png";
-} else {
-	document.getElementById("same").src = "../Images/cross.png";
 
+window.onload = function() {
+
+if (this.getField("pwd1").value == this.getField("pwd2").value) {
+	document.getElementById("same").src = "Views/Images/check.png";
+    var context = [[@{/}]];
+    document.getElementById("same").src=context + 'Views/Images/check.png' ;
+
+} else {
+	document.getElementById("same").src = "Views/Images/cross.png";
+    var context = [[@{/}]];
+    document.getElementById("same").src=context + 'Views/Images/cross.png' ;
+
+}
 }

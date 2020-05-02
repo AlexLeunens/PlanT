@@ -1,58 +1,18 @@
 <html lang="fr">
-
 <html xmlns:th="https://www.thymeleaf.org">
 
-</html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<div th:replace="templates/header :: header"></div>
 
-	<title>PlanT - Accueil</title>
-	<link rel="icon" href="./Images/icone.png">
+<meta charset="utf-8">
+<title>PlanT - Formation</title>
 
-	<!-- Boostrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="Views/Styles/Accueil.css" />
 
-	<!-- CSS page et sidebar -->
-	<link rel="stylesheet" type="text/css" href="Views/Styles/Accueil.css" />
+<script src="Views/Scripts/WeatherAPI.js"></script>
+<script src="Views/Scripts/Facts.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="Views/Styles/Sidebar.css" />
-
-	<!-- Fonts & icons -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-		integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-		crossorigin="anonymous"></script>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-		integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-		crossorigin="anonymous"></script>
-
-	<!-- Jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-	<!-- Custom scripts -->
-
-	<!--
-		<script src="Views/Scripts/scroll-down.js"></script>
-		<script src="Views/Scripts/ScrollSidebarMenu.js"></script>
-
-	-->
-	<script src="Views/Scripts/DateAccueil.js"></script>
-	<script src="Views/Scripts/WeatherAPI.js"></script>
-
-	<!-- TO MOVE IN SIDEBAR -->
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#sidebarCollapse').on('click', function () {
-				$('#sidebar').toggleClass('active');
-			});
-		});
-	</script>
 </head>
 
 <body>
@@ -61,190 +21,202 @@
 
 		<div th:replace="templates/Sidebar :: sidebar"></div>
 
-		<!-- Page Content  -->
-		<div id="content">
+		<div class="col-sm-12">
 
-			<div>
-				<div class="row">
+			<!-- Page Content  -->
+			<div id="content">
 
-					<div class="col-sm-12 d-block d-md-none" style="margin-bottom: 10px;">
-						<button type="button" id="sidebarCollapse" class="btn btn-info">
-							<i class="fas fa-align-left"></i>
-						</button>
-					</div>
+				<div>
+					<div class="row">
 
-					<div class="col-sm-12">
-						<div class="mb-4 block first">
-							<div style="color: #808080;">
-								<div style="font-size: 1.6em;">
-									<div class="welcome" id="date"></div>
+						<div class="col-sm-12 d-block d-md-none"
+							style="margin-bottom: 10px;">
+							<button type="button" id="sidebarCollapse" class="btn btn-info">
+								<i class="fas fa-align-left"></i>
+							</button>
+						</div>
 
-									<div class="welcome">
-										<div class="d-none d-md-block" id="season">Début du
-											printemps</div>
+						<div class="col-sm-12">
+							<div class="mb-4 block first">
+								<div style="color: #808080;">
+									<div style="font-size: 1.6em;">
+										<a class="welcome" id="date"></a>
+
+										<div class="welcome">
+											<a class="d-none d-md-block" id="season">Jour et saison</a>
+										</div>
 									</div>
+									<a id="messageMois">Js loading ...</a>
 								</div>
-								<div>"Avril a 30 jours. Si 31 il avait, personne ne s'en
-									plaindrait !"</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-sm-12 d-none d-md-block">
-						<div class="mb-4 secondImage">
-							<img src="./Images/2.jpg" width="100%"> <a class="ct-btn-scroll ct-js-btn-scroll"
-								href="#section2"> <img alt="Arrow Down Icon"
+					<div class="row">
+						<div class="col-sm-12 d-none d-md-block">
+							<div class="mb-4 secondImage">
+								<img src="Views/Images/2.jpg" width="100%"
+									th:src="@{Views/Images/2.jpg}"> <a
+									class="ct-btn-scroll ct-js-btn-scroll" href="#section2"> <img
+									alt="Arrow Down Icon"
 									src="https://www.thenightministry.org/images/down-arrow-animated.gif ">
-							</a>
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row" id="section2">
-					<div class="col-sm-7">
-						<div class="mb-4 block">
-							<div>
-								<h4 class="SousSection">Météo au jardin</h4>
+					<div class="row" id="section2">
+						<div class="col-sm-7">
+							<div class="mb-4 block">
+								<div>
+									<h4 class="SousSection">Météo au jardin</h4>
 
-								<div class="container">
+									<div class="container">
 
-									<div class="row">
-										<div class="col-lg-8">
+										<div class="row">
+											<div class="col-lg-8">
 
-											<div class="container">
-												<div class="row">
-													<div class="col-7">
-														<img id="weatherIcon">
-													</div>
-													<div class="col-5">
+												<div class="container">
+													<div class="row">
+														<div class="col-7">
+															<fieldset>
+																<legend>Aujourd'hui</legend>
+																<img id="weatherIcon">
+															</fieldset>
+														</div>
+														<div class="col-5">
 
 
-														<table class="mtable">
-															<tr>
-																<td>🌡️ &nbsp;</td>
-																<td id="temp"></td>
-															</tr>
-															<tr>
-																<td>💧 &nbsp;</td>
-																<td id="humi"></td>
-															</tr>
-															<tr>
-																<td>🌬️&nbsp;</td>
-																<td id="wind"></td>
-															</tr>
-															<tr>
-																<td>🌅 &nbsp;</td>
-																<td id="sunrise"></td>
-															</tr>
-															<tr>
-																<td>🌇 &nbsp;</td>
-																<td id="sunset"></td>
-															</tr>
-														</table>
+															<table class="mtable">
+																<tr>
+																	<td>🌡️ &nbsp;</td>
+																	<td id="temp"></td>
+																</tr>
+																<tr>
+																	<td>💧 &nbsp;</td>
+																	<td id="humi"></td>
+																</tr>
+																<tr>
+																	<td>🌬️&nbsp;</td>
+																	<td id="wind"></td>
+																</tr>
+																<tr>
+																	<td>🌅 &nbsp;</td>
+																	<td id="sunrise"></td>
+																</tr>
+																<tr>
+																	<td>🌇 &nbsp;</td>
+																	<td id="sunset"></td>
+																</tr>
+															</table>
 
+														</div>
 													</div>
 												</div>
+
+
 											</div>
+											<div class="col-lg-4 d-none d-md-block">
+												<fieldset>
+													<legend>&nbsp;Demain&nbsp;</legend>
+													<a id="tomorrowTemp"></a>
+												</fieldset>
 
+												<fieldset>
+													<legend>&nbsp;J+2&nbsp;</legend>
+													<a id="J2Temp"></a>
+												</fieldset>
+											</div>
+										</div>
 
-										</div>
-										<div class="col-lg-4">
-											<fieldset>
-												<legend>&nbsp;Demain&nbsp;</legend>
-												yes
-											</fieldset>
-											<fieldset>
-												<legend>&nbsp;J+2&nbsp;</legend>
-												yes
-											</fieldset>
-										</div>
 									</div>
 
 								</div>
-
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<div class="mb-4 block">
+								<h4 class="SousSection">Arroseurs du jour 💧</h4>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-5">
-						<div class="mb-4 block">
-							<h4 class="SousSection">Arroseurs du jour 💧</h4>
-						</div>
-					</div>
-				</div>
 
-				<div class="row">
+					<div class="row">
 
-					<!-- Here is the map of ISEP -->
-					<div class="col-sm-5 d-none d-md-block">
-						<div class="block">
-							<div class="mapouter">
-								<div class="gmap_canvas">
-									<iframe width="100%" height="380" id="gmap_canvas"
-										src="https://maps.google.com/maps?q=ISEP%20issy&t=k&z=17&ie=UTF8&iwloc=&output=embed"
-										frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+						<!-- Here is the map of ISEP -->
+						<div class="col-sm-5 d-none d-md-block">
+							<div class="block">
+								<div class="mapouter">
+									<div class="gmap_canvas">
+										<iframe width="100%" height="380" id="gmap_canvas"
+											src="https://maps.google.com/maps?q=ISEP%20issy&t=k&z=17&ie=UTF8&iwloc=&output=embed"
+											frameborder="0" scrolling="no" marginheight="0"
+											marginwidth="0"> </iframe>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-sm-7 block2">
+						<div class="col-sm-7 block2">
 
-						<div class="mb-3  block block4">
-							<h4 class="SousSection">Plant Fact #624</h4>
-							<div style="text-align: justify; text-justify: inter-word;">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-								sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-						</div>
+							<div class="mb-3  block block4">
+								<h4 class="SousSection">Plant Fact #624</h4>
+								<div style="text-align: justify; text-justify: inter-word;">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+									eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+									enim ad minim veniam, quis nostrud exercitation ullamco laboris
+									nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+									in reprehenderit in voluptate velit esse cillum dolore eu
+									fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est
+									laborum.</div>
+							</div>
 
-						<div class="block block3">
-							<h4 class="SousSection">En ce moment au jardin</h4>
-							<div class="table-responsive table-condensed">
-								<table class="table" bordercolor="#fff">
-									<thead>
-										<tr>
-											<th>Plante</th>
-											<th>Quantité</th>
-											<th>Planté le</th>
-											<th>Récolte</th>
-										</tr>
-									</thead>
+							<div class="block block3">
+								<h4 class="SousSection">En ce moment au jardin</h4>
+								<div class="table-responsive table-condensed">
+									<table class="table" bordercolor="#fff">
+										<thead>
+											<tr>
+												<th>Plante</th>
+												<th>Quantité</th>
+												<th>Planté le</th>
+												<th>Récolte</th>
+											</tr>
+										</thead>
 
-									<tbody>
-										<tr>
-											<td>Tomates 🍅</td>
-											<td>24</td>
-											<td>2 Avril</td>
-											<td style="background-color: green;">10 Avril</td>
-										</tr>
-										<tr>
-											<td>Carottes 🥕</td>
-											<td>30</td>
-											<td>2 Avril</td>
-											<td style="background-color: lightgreen;">24 Avril</td>
-										</tr>
-										<tr>
-											<td>Poireaux</td>
-											<td>44</td>
-											<td>2 Avril</td>
-											<td>27 Mars</td>
-										</tr>
-									</tbody>
-								</table>
+										<tbody>
+											<tr>
+												<td>Tomates 🍅</td>
+												<td>24</td>
+												<td>2 Avril</td>
+												<td style="background-color: green;">10 Avril</td>
+											</tr>
+											<tr>
+												<td>Carottes 🥕</td>
+												<td>30</td>
+												<td>2 Avril</td>
+												<td style="background-color: lightgreen;">24 Avril</td>
+											</tr>
+											<tr>
+												<td>Poireaux</td>
+												<td>44</td>
+												<td>2 Avril</td>
+												<td>27 Mars</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
 							</div>
 
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
 </body>
+<script src="Views/Scripts/Facts.js"></script>
+
 
 </html>

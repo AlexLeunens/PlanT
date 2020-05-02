@@ -10,49 +10,48 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SidebarController {
 
-    private ModelAndView redirect(@ModelAttribute User user, String viewName) {
+	private ModelAndView redirect(@ModelAttribute User user, String viewName) {
 
-        ModelAndView result = new ModelAndView();
-        result.addObject(user);
-        result.setViewName(viewName);
+		ModelAndView result = new ModelAndView();
+		result.addObject(user);
+		result.setViewName(viewName);
 
-        return result;
-    }
+		return result;
+	}
 
-    @GetMapping(value = {"/accueil",""})
-    public ModelAndView displayHomepage(@ModelAttribute User user) {
+	@GetMapping(value = { "/accueil", "" })
+	public ModelAndView displayHomepage(@ModelAttribute User user) {
+		return redirect(user, "homepageView");
+	}
 
-        return redirect(user, "homepageView");
-    }
+	@GetMapping(value = "/calendrier")
+	public ModelAndView displayCalendrier(@ModelAttribute User user) {
+		return redirect(user, "Calendrier");
+	}
 
-    @GetMapping(value = "/calendrier")
-    public ModelAndView displayCalendrier(@ModelAttribute User user) {
+	@GetMapping(value = "/jardin")
+	public ModelAndView displayJardin(@ModelAttribute User user) {
+		return redirect(user, "Jardin");
+	}
 
-        return redirect(user, "calendrier");
-    }
+	@GetMapping(value = "/arrosage")
+	public ModelAndView displayArrosage(@ModelAttribute User user) {
+		return redirect(user, "Arrosage");
+	}
 
-    @GetMapping(value = "/jardin")
-    public ModelAndView displayJardin(@ModelAttribute User user) {
+	@GetMapping(value = "/formation")
+	public ModelAndView displayFormation(@ModelAttribute User user) {
+		return redirect(user, "Formation");
+	}
 
-        return redirect(user, "Jardin");
-    }
-
-    @GetMapping(value = "/arrosage")
-    public ModelAndView displayArrosage(@ModelAttribute User user) {
-
-        return redirect(user, "Arrosage");
-    }
-
-    @GetMapping(value = "/formation")
-    public ModelAndView displayFormation(@ModelAttribute User user) {
-
-        return redirect(user, "Formation");
-    }
-
-    @GetMapping(value = "/moncompte")
-    public ModelAndView displayMonCompte(@ModelAttribute User user) {
-
-        return redirect(user, "MonCompte");
-    }
+	@GetMapping(value = "/compte")
+	public ModelAndView displayCompte(@ModelAttribute User user) {
+		return redirect(user, "Compte");
+	}
+	
+	@GetMapping(value = "/infos")
+	public ModelAndView displayInfos(@ModelAttribute User user) {
+		return redirect(user, "Infos");
+	}
 
 }

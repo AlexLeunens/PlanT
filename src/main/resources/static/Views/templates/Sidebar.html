@@ -2,8 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Fragments for the sidebar</title>
+<meta charset="UTF-8" />
+<title>Fragments for the sidebar</title>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#sidebarCollapse').on('click', function() {
+			$('#sidebar').toggleClass('active');
+		});
+	});
+</script>
+
 </head>
 
 <body>
@@ -18,58 +26,62 @@
 				</div>
 			</a>
 
-			<ul class="list-unstyled components">
-				<li class="active"><a href="/accueil" class="page"> <img class="hidden " src="./Images/accueil.png">
+			<ul class="list-unstyled components pages">
+				<li class="active"><a href="/accueil" class="page"> <img
+						class="hidden " src="Views/Images/accueil.png" th:src="@{Views/Images/accueil.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="./Images/accueil.png">&nbsp;&nbsp;&nbsp;&nbsp;Accueil
+							<img src="Views/Images/accueil.png" th:src="@{Views/Images/accueil.png}">&nbsp;&nbsp;&nbsp;&nbsp;Accueil
 						</div>
-					</a></li>
+				</a></li>
 
 
-				<li><a href="/calendrier" class="page"> <img class="hidden" src="./Images/calendrier.png">
+				<li><a href="/calendrier" class="page"> <img class="hidden"
+						src="Views/Images/calendrier.png" th:src="@{Views/Images/calendrier.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="./Images/calendrier.png">&nbsp;&nbsp;&nbsp;&nbsp;Calendrier
+							<img src="Views/Images/calendrier.png" th:src="@{Views/Images/calendrier.png}">&nbsp;&nbsp;&nbsp;&nbsp;Calendrier
 						</div>
-					</a></li>
+				</a></li>
 
-				<li>
-					<a href="/jardin" class="page">
-						<img class="hidden" src="./Images/plan.png">
+				<li><a href="/jardin" class="page"> <img class="hidden"
+						src="Views/Images/plan.png" th:src="@{Views/Images/plan.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="./Images/plan.png">&nbsp;&nbsp;&nbsp;&nbsp;Jardin
+							<img src="Views/Images/plan.png" th:src="@{Views/Images/plan.png}">&nbsp;&nbsp;&nbsp;&nbsp;Jardin
 						</div>
-					</a>
-				</li>
+				</a></li>
 
-				<li><a href="/arrosage" class="page"> <img class="hidden" src="./Images/arrosage.png">
+				<li><a href="/arrosage" class="page"> <img class="hidden"
+						src="Views/Images/arrosage.png" th:src="@{Views/Images/arrosage.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="./Images/arrosage.png">&nbsp;&nbsp;&nbsp;&nbsp;Arrosage
+							<img src="Views/Images/arrosage.png" th:src="@{Views/Images/arrosage.png}">&nbsp;&nbsp;&nbsp;&nbsp;Arrosage
 						</div>
-					</a></li>
+				</a></li>
 
-				<li><a href="/formation" class="page"> <img class="hidden" src="./Images/cours.png">
+				<li><a href="/formation" class="page"> <img class="hidden"
+						src="Views/Images/cours.png" th:src="@{Views/Images/cours.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="./Images/cours.png">&nbsp;&nbsp;&nbsp;&nbsp;Formation
+							<img src="Views/Images/cours.png" th:src="@{Views/Images/cours.png}">&nbsp;&nbsp;&nbsp;&nbsp;Formation
 						</div>
-					</a></li>
+				</a></li>
 
-				<li><a href="/moncompte" class="page"> <img class="hidden" src="./Images/compte.png">
+				<li><a href="/compte" class="page"> <img class="hidden"
+						src="Views/Images/compte.png" th:src="@{Views/Images/compte.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="./Images/compte.png">&nbsp;&nbsp;&nbsp;&nbsp;Mon compte
+							<img src="Views/Images/compte.png" th:src="@{Views/Images/compte.png}">&nbsp;&nbsp;&nbsp;&nbsp;Compte
 						</div>
-					</a></li>
+				</a></li>
 
 			</ul>
 
 			<div class="sidebar-footer">
 				<ul class="list-unstyled components">
-					<li><a href="@infos"> <img id="image_infos" src="./Images/infos.png">
-						</a></li>
+					<li><a href="/infos"> <img id="image_infos"
+							src="Views/Images/infos.png" th:src="@{Views/Images/infos.png}">
+					</a></li>
 				</ul>
 			</div>
 
 		</nav>
-		</sidebar>
+	</div>
 
 </body>
 

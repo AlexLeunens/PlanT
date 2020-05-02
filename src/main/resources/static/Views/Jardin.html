@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html>
+<html lang="fr">
+<html xmlns:th="https://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Jardin</title>
 </head>
+
 <body>
 
+	<div class="wrapper">
+
+		<div th:replace="templates/Sidebar :: sidebar"></div>
+
+		<div class="col-sm-12">
+			<div id="content">
+				<h1>Jardin</h1>
+			</div>
+		</div>
 </body>
+
 </html>
