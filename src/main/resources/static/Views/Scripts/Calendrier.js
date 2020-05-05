@@ -61,11 +61,10 @@ window.onload = function() {
 				'En octobre, tonnerre, vendange prospère.' ];
 		break;
 	case 10:
-		fact = [ 'Le vent de novembre arrache la dernière feuille.',
-				'Gelée de novembre, adieu l\'herbe tendre.' ];
+		fact = ['Le vent de novembre arrache la dernière feuille.','Gelée de novembre, adieu l\'herbe tendre.'];
 		break;
 	case 11:
-		fact = [ 'Décembre prend et ne rend.', ];
+		fact = ['Décembre prend et ne rend.',' Si décembre est sous la neige, la récolte se protège.'];
 		break;
 	}
 	document.getElementById("messageMois").innerHTML = fact[Math.floor(Math
@@ -107,19 +106,5 @@ window.onload = function() {
 	}
 	document.getElementById("date").innerHTML = fdf;
 	document.getElementById("season").innerHTML = season;
-
-	fact = [
-			'Les premières serres de l\'histoire ont été construites à Rome en l\'an 30 après JC sous les ordres de l\'empereur Tibère qui voulait manger un concombre par jour. ',
-			"Les pastèques sont en fait des légumes et sont liées à la courge, aux concombres et aux citrouilles.",
-			"Près de 1000 fleurs de jasmin et une douzaine de roses se retrouvent dans un seul flacon de parfum Chanel n ° 5.",
-			"Les premiers jardins étaient strictement pratiques et étaient utilisés pour cultiver de la nourriture et des herbes médicinales. Vers 1500 avant JC en Egypte , les premiers jardins décoratifs sont apparus. ",
-			"La Journée mondiale du jardinage nu est célébrée le premier samedi de mai. Il vise à promouvoir l'harmonie et la paix avec la nature.",
-			"Selon Sir Francis Bacon, les jardins sont «les plaisirs humains les plus purs».",
-			"Il existe au moins 10 000 variétés de tomates. Plus de 60 millions de tonnes de tomates sont produites chaque année, ce qui en fait le fruit le plus populaire au monde.",
-			"Les jardins et la philosophie sont souvent considérés comme liés. Les philosophes notent la contribution du jardinage à la «bonne vie». ",
-			"Les jardins suspendus de Babylone étaient l'une des sept merveilles du monde antique. Ils auraient été construits par le roi néo-babylonien Nabuchodonosor II en actuel Irak."];
-	var index = Math.floor(Math.random() * fact.length)
-	document.getElementById("factAnnouncer").innerHTML = "Fact #" + index;
-	document.getElementById("dayFact").innerHTML = fact[index];
 
 }

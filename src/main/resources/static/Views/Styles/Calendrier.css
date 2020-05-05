@@ -1,0 +1,27 @@
+li:nth-child(2) a {
+	color: #fff;
+	background: #8E70B6;
+}
+
+.block {
+	background-color: #EAE4C2;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+}
+
+td {
+	width: 8%;
+	text-align: center;
+}
+
+th, .top {
+	text-align: center;
+	font-size: 1.2em;
+	background-color: #B2ABDE;
+	color: white;
+}
+
+.separation {
+	margin-bottom: 2px;
+	border: 1px solid gray;
+}

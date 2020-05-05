@@ -26,8 +26,6 @@
 			<!-- Page Content  -->
 			<div id="content">
 
-				<div th:text="${user.name}"></div>
-
 				<div>
 					<div class="row">
 
@@ -68,7 +66,7 @@
 					</div>
 
 					<div class="row" id="section2">
-						<div class="col-sm-7">
+						<div class="col-sm-8">
 							<div class="mb-4 block">
 								<div>
 									<h4 class="SousSection">Météo au jardin</h4>
@@ -121,12 +119,12 @@
 											<div class="col-lg-4 d-none d-md-block">
 												<fieldset>
 													<legend>&nbsp;Demain&nbsp;</legend>
-													<a id="tomorrowTemp"></a>
+													<a style="text-align: middle;" id="tomorrowTemp"></a>
 												</fieldset>
 
 												<fieldset>
 													<legend>&nbsp;J+2&nbsp;</legend>
-													<a id="J2Temp"></a>
+													<a style="text-align: middle;" id="J2Temp"></a>
 												</fieldset>
 											</div>
 										</div>
@@ -136,9 +134,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-5">
+						<div class="col-sm-4">
 							<div class="mb-4 block">
 								<h4 class="SousSection">Arroseurs du jour 💧</h4>
+								<h6>Lorem Ipsum, de 8h à 9h</h6>
+								<h6>Noël Flantier, de 17 à 18h</h6>
 							</div>
 						</div>
 					</div>
@@ -146,7 +146,7 @@
 					<div class="row">
 
 						<!-- Here is the map of ISEP -->
-						<div class="col-sm-5 d-none d-md-block">
+						<div class="col-sm-6 d-none d-md-block">
 							<div class="block">
 								<div class="mapouter">
 									<div class="gmap_canvas">
@@ -159,19 +159,13 @@
 							</div>
 						</div>
 
-						<div class="col-sm-7 block2">
+						<div class="col-sm-6 block2">
 
 							<div class="mb-3  block block4">
-								<h4 class="SousSection">Plant Fact #624</h4>
-								<div style="text-align: justify; text-justify: inter-word;">
+								<h4 class="SousSection" id="factAnnouncer">Plant Fact #0</h4>
+								<div id="dayFact" style="text-align: justify; text-justify: inter-word;">
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-									eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-									enim ad minim veniam, quis nostrud exercitation ullamco laboris
-									nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-									in reprehenderit in voluptate velit esse cillum dolore eu
-									fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est
-									laborum.</div>
+									eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 							</div>
 
 							<div class="block block3">
@@ -189,23 +183,12 @@
 
 										<tbody>
 											<tr>
-												<td>Tomates 🍅</td>
-												<td>24</td>
-												<td>2 Avril</td>
-												<td style="background-color: green;">10 Avril</td>
+												<td>En développement</td>
+												<td></td>
+												<td></td>
+												<td></td>
 											</tr>
-											<tr>
-												<td>Carottes 🥕</td>
-												<td>30</td>
-												<td>2 Avril</td>
-												<td style="background-color: lightgreen;">24 Avril</td>
-											</tr>
-											<tr>
-												<td>Poireaux</td>
-												<td>44</td>
-												<td>2 Avril</td>
-												<td>27 Mars</td>
-											</tr>
+
 										</tbody>
 									</table>
 								</div>

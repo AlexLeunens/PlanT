@@ -5,6 +5,11 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+li:nth-child(1) a{
+	color: #fff;
+	background: #8E70B6;
+}
+
 a, a:hover, a:focus {
 	color: #fff;
 	text-decoration: none;

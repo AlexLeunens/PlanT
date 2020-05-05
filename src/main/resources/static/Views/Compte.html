@@ -59,23 +59,16 @@
 									<div class="fullBox">Mes informations</div>
 									<div class="emptyBox">
 
-										<div class="switchs2">Raphael Caillon</div>
+										<div class="switchs2" th:text="${user.name}"></div>
 										<div class="switchs">
 											<input class="formInput" type="text" id="fname" name="fname"
 												value="Raphael"> <input class="formInput"
 												type="text" id="lname" name="fname" value="Caillon"><br>
 										</div>
 
-										<div class="switchs2">Ne(e) le 11 Decembre 1998</div>
-										<div class="switchs">
-											Ne(e) le <input class="formInput" type="date"
-												value="1998-12-11" id="birth" name="fname"><br>
-										</div>
-
 										<hr>
-										<div>raphael.caillon@isep.fr</div>
+										<div th:text="${user.email}">lorem.ipsum@mail.com</div>
 
-										<div class="switchs2">Mot de passe</div>
 										<div class="switchs">
 
 											<input class="formInput pwdInput" type="password" id="pwd1"
@@ -93,13 +86,6 @@
 											<input type="checkbox" id="Nouvelles" name="Nouvelles"
 												value="Subscribed"> <label for="fruit1">&nbsp;Abonne
 												aux nouvelles</label>
-										</div>
-
-										<div class="switchs2">Rappels arrosage</div>
-										<div class="switchs">
-											<input type="checkbox" id="Rappels" name="Rappels"
-												value="Rappels arrosage"> <label for="fruit1">
-												&nbsp;Rappels arrosage</label>
 										</div>
 
 										<hr>

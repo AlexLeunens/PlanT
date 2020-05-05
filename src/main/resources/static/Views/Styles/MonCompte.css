@@ -1,6 +1,11 @@
 @import
 	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+li:nth-child(6) a {
+	color: #fff;
+	background: #8E70B6;
+}
+
 body {
 	font-family: 'Poppins', sans-serif;
 }
@@ -28,41 +33,6 @@ a, a:hover, a:focus {
 
 .right {
 	float: right;
-}
-
-input[type=checkbox]+label {
-	display: block;
-	margin: 0.2em;
-	cursor: pointer;
-	padding: 0.2em;
-}
-
-input[type=checkbox] {
-	display: none;
-}
-
-input[type=checkbox]+label:before {
-	content: "\2714";
-	border: 0.1em solid #b7b7b7;
-	border-radius: 0.2em;
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	padding-left: 0.2em;
-	margin-right: 0.2em;
-	vertical-align: middle;
-	color: transparent;
-	transition: .2s;
-}
-
-input[type=checkbox]+label:active:before {
-	transform: scale(0);
-}
-
-input[type=checkbox]:checked+label {
-	background-color: MediumSeaGreen;
-	border-color: MediumSeaGreen;
-	color: #fff;
 }
 
 #visibility {
@@ -120,7 +90,6 @@ hr {
 .Initiale {
 	margin-top: 30px;
 }
-
 
 #content .block {
 	background-color: #EAE4C2;

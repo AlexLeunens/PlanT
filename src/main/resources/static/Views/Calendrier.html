@@ -4,6 +4,9 @@
 <head>
 <div th:replace="templates/header :: header"></div>
 <title>PlanT - Calendrier</title>
+<link rel="stylesheet" type="text/css"
+	href="Views/Styles/Calendrier.css" />
+
 </head>
 
 <body>
@@ -14,10 +17,122 @@
 
 		<div class="col-sm-12">
 			<div id="content">
-				<h1>Calendrier</h1>
+
+				<div class="col-sm-12">
+					<div class="mb-4 block first">
+						<div style="color: #808080;">
+							<div style="font-size: 1.6em;">Quand planter quoi ? 🤔
+								Toutes les infos ici ! 😉</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12">
+					<div class="mb-4 block first">
+						<div style="color: #808080;">
+
+							<a>Legende :</a>
+						</div>
+					</div>
+				</div>
+
+				<div style="padding: 10px;">
+					<table style="width: 100%;">
+						<tr class="separation">
+							<th>Fruits</th>
+							<th colspan="12">
+								<table style="width: 100%;">
+									<tr class="top">
+										<td>Jan</td>
+										<td>Fev</td>
+										<td>Mars</td>
+										<td>Avr</td>
+										<td>Mai</td>
+										<td>Juin</td>
+										<td>Juil</td>
+										<td>Août</td>
+										<td>Sep</td>
+										<td>Oct</td>
+										<td>Nov</td>
+										<td>Dec</td>
+									</tr>
+
+								</table>
+							</th>
+
+						</tr>
+
+						<tr  class="separation">
+							<td>Tomate</td>
+							<td colspan="12">
+								<table style="width: 100%;">
+									<tr>
+										<td>Smith</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+									</tr>
+									<tr>
+										<td>Smith</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+										<td>50</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>Jill</td>
+							<td>Smith</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+
+						</tr>
+						<tr>
+							<td>Jill</td>
+							<td>Smith</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+							<td>50</td>
+
+						</tr>
+					</table>
+				</div>
 
 
-				<div th:text="${user.name}"></div>
 			</div>
 		</div>
 </body>

@@ -133,10 +133,6 @@ body {
 	background: #B2ABDE;
 }
 
-#sidebar ul li.active>a, a[aria-expanded="true"] {
-	color: #fff;
-	background: #8E70B6;
-}
 
 a[data-toggle="collapse"] {
 	position: relative;
