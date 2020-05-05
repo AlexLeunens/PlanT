@@ -36,7 +36,6 @@ public class AuthenticationController {
 
 		ModelAndView result = new ModelAndView();
 		result.setViewName("loginView");
-		result.addObject("user", new User());
 
 		return result;
 	}

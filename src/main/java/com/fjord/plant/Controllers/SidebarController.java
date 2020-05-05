@@ -1,18 +1,33 @@
 package com.fjord.plant.Controllers;
 
 import com.fjord.plant.Model.User;
+import com.fjord.plant.Services.UserService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SidebarController {
 
-	private ModelAndView redirect(@ModelAttribute User user, String viewName) {
+	@Autowired
+	private UserService userService;
 
+	private User getUser() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String mail = auth.getName();
+
+		User user = userService.findUserByEmail(mail);
+		return user;
+	}
+
+	private ModelAndView redirect(String viewName) {
 		ModelAndView result = new ModelAndView();
+
+		User user = getUser();
 		result.addObject(user);
 		result.setViewName(viewName);
 
@@ -20,38 +35,38 @@ public class SidebarController {
 	}
 
 	@GetMapping(value = { "/accueil", "" })
-	public ModelAndView displayHomepage(@ModelAttribute User user) {
-		return redirect(user, "homepageView");
+	public ModelAndView displayHomepage() {
+		return redirect("homepageView");
 	}
 
 	@GetMapping(value = "/calendrier")
-	public ModelAndView displayCalendrier(@ModelAttribute User user) {
-		return redirect(user, "Calendrier");
+	public ModelAndView displayCalendrier() {
+		return redirect("Calendrier");
 	}
 
 	@GetMapping(value = "/jardin")
-	public ModelAndView displayJardin(@ModelAttribute User user) {
-		return redirect(user, "Jardin");
+	public ModelAndView displayJardin() {
+		return redirect("Jardin");
 	}
 
 	@GetMapping(value = "/arrosage")
-	public ModelAndView displayArrosage(@ModelAttribute User user) {
-		return redirect(user, "Arrosage");
+	public ModelAndView displayArrosage() {
+		return redirect("Arrosage");
 	}
 
 	@GetMapping(value = "/formation")
-	public ModelAndView displayFormation(@ModelAttribute User user) {
-		return redirect(user, "Formation");
+	public ModelAndView displayFormation() {
+		return redirect("Formation");
 	}
 
 	@GetMapping(value = "/compte")
-	public ModelAndView displayCompte(@ModelAttribute User user) {
-		return redirect(user, "Compte");
+	public ModelAndView displayCompte() {
+		return redirect("Compte");
 	}
-	
+
 	@GetMapping(value = "/infos")
-	public ModelAndView displayInfos(@ModelAttribute User user) {
-		return redirect(user, "Infos");
+	public ModelAndView displayInfos() {
+		return redirect("Infos");
 	}
 
 }
