@@ -1,5 +1,7 @@
 package com.fjord.plant.Services;
 
+import java.util.Date;
+
 import com.fjord.plant.Model.User;
 import com.fjord.plant.Repository.UserRepository;
 
@@ -29,6 +31,7 @@ public class UserService {
 
     public User saveUser(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword())); // encodes the password
+        user.setCreationDate(new Date());
 
         return userRepository.save(user);
     }

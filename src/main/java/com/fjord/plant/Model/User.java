@@ -1,5 +1,7 @@
 package com.fjord.plant.Model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,14 +17,54 @@ public class User {
 
   private String name;
 
+  private String surname;
+
   private String email;
 
   private String password;
 
   private boolean isVerified = false;
 
+  private Date creationDate;
+
+  private int timesWatered = 0;
+
+  private int formationsFollowed = 0;
+
   public Integer getId() {
     return id;
+  }
+
+  public int getFormationsFollowed() {
+    return formationsFollowed;
+  }
+
+  public void setFormationsFollowed(int formationsFollowed) {
+    this.formationsFollowed = formationsFollowed;
+  }
+
+  public int getTimesWatered() {
+    return timesWatered;
+  }
+
+  public void setTimesWatered(int timesWatered) {
+    this.timesWatered = timesWatered;
+  }
+
+  public Date getCreationDate() {
+    return creationDate;
+  }
+
+  public void setCreationDate(Date creationDate) {
+    this.creationDate = creationDate;
+  }
+
+  public String getSurname() {
+    return surname;
+  }
+
+  public void setSurname(String surname) {
+    this.surname = surname;
   }
 
   public void setId(Integer id) {
