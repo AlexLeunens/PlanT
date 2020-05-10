@@ -4,8 +4,6 @@ import com.fjord.plant.Model.User;
 import com.fjord.plant.Services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,18 +14,10 @@ public class SidebarController {
 	@Autowired
 	private UserService userService;
 
-	private User getUser() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String mail = auth.getName();
-
-		User user = userService.findUserByEmail(mail);
-		return user;
-	}
-
 	private ModelAndView redirect(String viewName) {
 		ModelAndView result = new ModelAndView();
 
-		User user = getUser();
+		User user = userService.getCurrentUser();
 		result.addObject(user);
 		result.setViewName(viewName);
 

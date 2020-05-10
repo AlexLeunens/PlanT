@@ -58,16 +58,18 @@
 
 					<div class="row Initiale">
 						<div class="col-7">
-							<form id="myForm">
+
+							<form id="myForm" th:object="${user}" th:action="@{/compte}" method="POST">
+
 								<div class="fullBox">Mes informations</div>
 								<div class="emptyBox">
 
-									<div class="switchs2" th:text="${user.name}"></div>
+									<div class="switchs2" th:text="${user.name + ' ' + user.surname}"></div>
 									<div class="switchs">
 										<input class="formInput" type="text" id="fname" name="fname"
-											th:value="${user.name}" placeholder="Name">
+											th:value="${user.name}" th:field="*{name}" placeholder="Name">
 										<input class="formInput" type="text" id="lname" name="lname"
-											th:value="${user.surname}" placeholder="Surname">
+											th:value="${user.surname}" th:field="*{surname}" placeholder="Surname">
 										<br>
 									</div>
 
@@ -104,16 +106,15 @@
 								<div class="fullBox">
 									<button type="button" id="editButton" class="neutralButton"
 										onclick="switchOnOff()">Edit</button>
-									<button type="button" id="UpdateButton" class="neutralButton right">Update</button>
+									<button type="Submit" id="UpdateButton" class="neutralButton right">Update</button>
 								</div>
 							</form>
+
 						</div>
 
 						<div class="col-5">
 							<div class="fullBox">Ma participation</div>
 							<div class="emptyBox">
-								<div>Plantations : 4</div>
-								<hr>
 								<div class="row">
 									<div class="col-5">Arrosages :</div>
 									<div class="col-7" th:text="${user.timesWatered}"></div>

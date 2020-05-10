@@ -29,8 +29,6 @@ public class AuthenticationController {
 	@Autowired
 	private EmailSenderService emailSenderService;
 
-	// TODO: the view's name will most likely change
-
 	@GetMapping(value = "/login")
 	public ModelAndView login() {
 
@@ -53,15 +51,14 @@ public class AuthenticationController {
 	public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
 
 		ModelAndView result = new ModelAndView();
+		result.setViewName("register");
 
 		User userExists = userService.findUserByEmail(user.getEmail());
 		if (userExists != null) {
 			bindingResult.rejectValue("email", "error.user",
 					"There is already a user registered with the email provided");
 		}
-		if (bindingResult.hasErrors()) {
-			result.setViewName("register");
-		} else {
+		if (!bindingResult.hasErrors()) {
 
 			userService.saveUser(user);
 
@@ -83,9 +80,7 @@ public class AuthenticationController {
 
 			result.addObject("successMessage", "User has been registered successfully ! Check your emails");
 			result.addObject("user", new User());
-			result.setViewName("register");
 		}
-
 		return result;
 	}
 
@@ -104,7 +99,6 @@ public class AuthenticationController {
 			modelAndView.addObject("message", "The link is invalid or broken!");
 			modelAndView.setViewName("error");
 		}
-
 		return modelAndView;
 	}
 }
