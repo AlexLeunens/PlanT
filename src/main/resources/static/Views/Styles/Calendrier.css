@@ -21,7 +21,21 @@ th, .top {
 	color: white;
 }
 
+td {
+	height: 10px;
+}
+
 .separation {
 	margin-bottom: 2px;
 	border: 1px solid gray;
+}
+
+.brown {
+	background-color: brown;
+	height: 20px;
+}
+
+.green {
+	background-color: green;
+	height: 20px;
 }

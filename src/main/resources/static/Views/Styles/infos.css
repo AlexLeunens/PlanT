@@ -1,0 +1,16 @@
+.block {
+	background-color: #EAE4C2;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin-bottom:15px;
+}
+
+.TitreInfo {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.paragraphe {
+	text-align: justify;
+	text-justify: inter-word;
+}

@@ -11,15 +11,19 @@
 		var s1 = document.getElementsByClassName('switchs');
 		var s2 = document.getElementsByClassName('switchs2');
 		var s3 = document.getElementById('editButton');
+		var s4 = document.getElementById('UpdateButton');
+
 		for (let i = 0; i < 100; i++) {
 			if (s1[i].style.display === "block") {
 				s1[i].style.display = "none";
+				s4.style.display = "none"
 				s2[i].style.display = "block";
 				document.getElementById("editButton").innerHTML = "Edit";
 				document.getElementById("myForm").reset();
 			} else {
 				s1[i].style.display = "block";
 				s2[i].style.display = "none";
+				s4.style.display = "block"
 				document.getElementById("editButton").innerHTML = "Cancel";
 
 			}
@@ -77,8 +81,7 @@
 												name="fname" value="Lorem Ipsum"> <img
 												src="Views/Images/eye.png" th:src="@{Views/Images/eye.png}"
 												id="visibility" onmouseover="mouseoverPass();"
-												onmouseout="mouseoutPass();" /> <img
-												src="../Images/cross.png" id="same" /> <br>
+												onmouseout="mouseoutPass();" /> <br>
 										</div>
 
 										<div class="switchs2">Abonne aux nouvelles</div>
@@ -92,13 +95,12 @@
 
 										<div>Cree le 12 Janvier 2020</div>
 
-
 									</div>
 									<div class="fullBox">
 										<button type="button" id="editButton" class="neutralButton"
 											onclick="switchOnOff()">Edit</button>
-										<input type="button" class="neutralButton switchs right"
-											value="Update">
+										<button type="button" id="UpdateButton"
+											class="neutralButton right">Update</button>
 									</div>
 								</form>
 							</div>
@@ -115,14 +117,15 @@
 
 								</div>
 
-								<div class="fullBox Initiale">Parametres</div>
+								<div class="fullBox Initiale">Param&egrave;tres</div>
 								<div class="emptyBox">
 									<div>
-										<a href="something" class="button6">Devenir admin</a>
+										<button class="buttonPara green">Devenir admin</button>
 									</div>
 									<hr>
 									<div>
-										<a href="something" class="button6">Supprimer mon compte</a>
+										<button class="buttonPara red">Supprimer mon compte</button>
+
 									</div>
 								</div>
 							</div>
