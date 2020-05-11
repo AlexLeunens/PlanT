@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Spring Security Tutorial</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div th:replace="templates/header :: header"></div>
+<title>Login Page</title>
+<!-- <link rel="stylesheet" -->
+<!-- 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css"
+	href="/Views/Styles/LoginStyle.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<form th:action="@{/register}" method="get">
-    <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button>
-</form>
+	<div class="wapper">
+<!-- 		<div th:replace="templates/Sidebar :: sidebar"></div> -->
+		<form th:action="@{/register}" method="get" class="register">
+			<button class="btn btn-md btn-warning btn-block" type="Submit">Incription</button>
+		</form>
+		<div class="main">
+			<div class="col-md-offset-3 resp-tabs-container login-top">
+				<form th:action="@{/login}" method="POST" class="form-signin">
+					<h3 class="form-signin-heading " th:text="Connectez-vous"></h3>
+					<br />
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" id="email" name="email" placeholder="Email"
+								class="form-control" /> <br />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<input type="password" th:placeholder="Password" id="password"
+								name="password" class="form-control" placeholder="Mot de passe" />
+							<br />
+						</div>
+					</div>
 
-<div class="container">
+					<div align="center" th:if="${param.error}">
+						<p style="font-size: 20; color: #FF1C19;">User Name or
+							Password invalid, please verify</p>
+					</div>
+					<div class="login-bottom form-group">
+						<ul>
+							<li>
+								<div class="input-group">
+									<button type="submit" class="btn btn-primary btn-block">Connexion</button>
+								</div>
+							</li>
+							<li><a href="#">mot de passe oublié ?</a></li>
+						</ul>
 
-    <form th:action="@{/login}" method="POST" class="form-signin">
-        <h3 class="form-signin-heading" th:text="Welcome"></h3>
-        <br/>
+					</div>
+				</form>
 
-        <input type="text" id="email" name="email" placeholder="User Name"
-               class="form-control"/> <br/>
-
-        <input type="password" th:placeholder="Password"
-               id="password" name="password" class="form-control"/> <br/>
-
-        <div align="center" th:if="${param.error}">
-            <p style="font-size: 20; color: #FF1C19;">User Name or Password invalid, please verify</p>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit"
-                th:text="Login"></button>
-    </form>
-</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
