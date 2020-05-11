@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<div th:replace="templates/header :: header"></div>
-<title>Login Page</title>
-<!-- <link rel="stylesheet" -->
-<!-- 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-<link rel="stylesheet" type="text/css"
-	href="/Views/Styles/LoginStyle.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<div th:replace="templates/header :: header"></div>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="/Views/Styles/login.css" />
 </head>
 
 <body>
-	<div class="wapper">
-<!-- 		<div th:replace="templates/Sidebar :: sidebar"></div> -->
-		<form th:action="@{/register}" method="get" class="register">
-			<button class="btn btn-md btn-warning btn-block" type="Submit">Incription</button>
-		</form>
+
+	<div class="wrapper">
+		
 		<div class="main">
 			<div class="col-md-offset-3 resp-tabs-container login-top">
 				<form th:action="@{/login}" method="POST" class="form-signin">
@@ -28,18 +18,18 @@
 					<br />
 					<div class="form-group">
 						<div class="input-group">
-							<input type="text" id="email" name="email" placeholder="Email"
-								class="form-control" /> <br />
+							<input type="text" id="email" name="email" placeholder="Email" class="form-control" />
+							<br />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-							<input type="password" th:placeholder="Password" id="password"
-								name="password" class="form-control" placeholder="Mot de passe" />
+							<input type="password" th:placeholder="Password" id="password" name="password"
+								class="form-control" placeholder="Mot de passe" />
 							<br />
 						</div>
 					</div>
-
+	
 					<div align="center" th:if="${param.error}">
 						<p style="font-size: 20; color: #FF1C19;">User Name or
 							Password invalid, please verify</p>
@@ -53,10 +43,14 @@
 							</li>
 							<li><a href="#">mot de passe oublié ?</a></li>
 						</ul>
-
+	
 					</div>
 				</form>
 
+				<form th:action="@{/register}" method="get" class="link">
+					<button type="submit" class="btn btn-link">Inscription</button> 
+				</form>
+	
 			</div>
 		</div>
 	</div>

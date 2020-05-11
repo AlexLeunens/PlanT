@@ -1,15 +1,19 @@
 body {
 	background: #EAE4C2;
 }
-.wapper{
-	
+.wrapper{
+	display:flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
 }
+
 .main {
-	margin: 100px auto;
-	width: 36%;
+	width: 800px;
 	padding: 40px;
 	background-color: #fff;
-	
+	border-radius:10px;
 }
 
 .login-top {
@@ -23,86 +27,29 @@ body {
 }
 
 input[type="text"], input[type="password"] {
-	outline: none;
-	font-size: 1em;
-	color: #999;
 	padding: 10px 10px 10px 0px;
-	margin: 0;
-	width: 89.87%;
 	border: none;
 	border-bottom: 2px solid #999;
 	-webkit-appearance: none;
-	margin-bottom: 2em;
 }
 
 .login-bottom {
 	margin-top: 2em;
 }
 
+.login-bottom ul{
+	padding:0;
+}
+
 .login-bottom li {
 	display: inline-block;
-	float: left;
 }
 
 .login-bottom li:nth-child(2) {
 	float: right;
 }
 
-.login-bottom li:nth-child(2):hover {
-	color: #000000;
-	transition: 0.5s all ease;
-}
-
-
-
-@media ( max-width : 1080px) {
-	.main {
-		width: 65%;
-	}
-}
-
-@media ( max-width : 991px) {
-	.login-top {
-		padding: 2em 2.5em;
-	}
-}
-
-@media ( max-width : 800px) {
-	.login-top {
-		padding: 2.15em 1.5em;
-	}
-	.main {
-		width: 83%;
-	}
-}
-
-@media ( max-width : 480px) {
-	.main {
-		padding: 2em 0 0;
-	}
-	h1 {
-		font-size: 2.5em;
-	}
-	.resp-tab-item {
-		font-size: 1.3em;
-	}
-	.login-top input[type="text"], .login-top input[type="password"] {
-		font-size: 0.9em;
-	}
-	.login-bottom a {
-		font-size: 0.9em;
-	}
-	.login-bottom input[type="submit"] {
-		font-size: 0.8em;
-	}
-	.login-top input[type="text"], .login-top input[type="password"] {
-		width: 83%;
-		margin-bottom: 1.5em;
-	}
-	.main {
-		margin: 45px auto;
-	}
-	.got {
-		padding: 1em 1em;
-	}
+.link{
+	display:flex;
+	justify-content: center;
 }
