@@ -5,6 +5,8 @@
 <div th:replace="templates/header :: header"></div>
 <title>PlanT - Arrosage</title>
 <link rel="stylesheet" type="text/css" href="Views/Styles/Arrosage.css" />
+<script src="Views/Scripts/Arrosage.js"></script>
+<script src="Views/Scripts/Arrosage2.js"></script>
 
 </head>
 
@@ -16,7 +18,66 @@
 
 		<div class="col-sm-12">
 			<div id="content">
-				<h1>Arrosage</h1>
+
+				<div class="block">
+					<h1>Planning de l'arrosage</h1>
+				</div>
+
+
+
+				<div class="main">
+					<div id="dp"></div>
+				</div>
+
+				<script>
+					var dp = new DayPilot.Month("dp", {
+						locale : "fr-ca",
+						viewType : "Weeks",
+						weeks : 6,
+						showWeekend : true,
+						timeRangeSelectedHandling : "Enabled",
+						onTimeRangeSelected : function(args) {
+							DayPilot.Modal.prompt("Qui arrosera ?",
+									"Thomas Soulage").then(function(modal) {
+								var dp = args.control;
+								dp.clearSelection();
+								if (!modal.result) {
+									return;
+								}
+								dp.events.add(new DayPilot.Event({
+									start : args.start,
+									end : args.end,
+									id : DayPilot.guid(),
+									text : modal.result
+								}));
+							});
+						},
+						eventDeleteHandling : "Disabled",
+						eventMoveHandling : "Update",
+						onEventMoved : function(args) {
+							this.message("Arrosage décalé");
+						},
+						eventResizeHandling : "Update",
+						onEventResized : function(args) {
+							this.message("Arrosage modifié");
+						},
+						eventClickHandling : "Disabled",
+						eventHoverHandling : "Disabled",
+						contextMenu : new DayPilot.Menu({
+							items : [ {
+								text : "Supprimer",
+								onClick : function(args) {
+									var dp = args.source.calendar;
+									dp.events.remove(args.source);
+								}
+							} ]
+						}),
+					});
+					dp.events.list = [];
+					dp.init();
+				</script>
+
+
 			</div>
 		</div>
 </body>

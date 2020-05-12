@@ -1,4 +1,11 @@
-li:nth-child(4) a{
+li:nth-child(4) a {
 	color: #fff;
 	background: #8E70B6;
+}
+
+.block {
+	background-color: #EAE4C2;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin-bottom:15px;
 }
