@@ -38,11 +38,11 @@
 
 
 				<li><a href="/calendrier" class="page deux"> <img
-						class="hidden" src="Views/Images/calendrier.png"
-						th:src="@{Views/Images/calendrier.png}">
+						class="hidden" src="Views/Images/seed.png"
+						th:src="@{Views/Images/seed.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="Views/Images/calendrier.png"
-								th:src="@{Views/Images/calendrier.png}">&nbsp;&nbsp;&nbsp;&nbsp;Calendrier
+							<img src="Views/Images/seed.png"
+								th:src="@{Views/Images/seed.png}">&nbsp;&nbsp;&nbsp;&nbsp;Plantations
 						</div>
 				</a></li>
 
@@ -56,11 +56,11 @@
 				</a></li>
 
 				<li><a href="/arrosage" class="page quatre"> <img
-						class="hidden" src="Views/Images/arrosage.png"
-						th:src="@{Views/Images/arrosage.png}">
+						class="hidden" src="Views/Images/calendrier.png"
+						th:src="@{Views/Images/calendrier.png}">
 						<div class="Titre d-none d-md-block">
-							<img src="Views/Images/arrosage.png"
-								th:src="@{Views/Images/arrosage.png}">&nbsp;&nbsp;&nbsp;&nbsp;Arrosage
+							<img src="Views/Images/calendrier.png"
+								th:src="@{Views/Images/calendrier.png}">&nbsp;&nbsp;&nbsp;&nbsp;Planning
 						</div>
 				</a></li>
 
@@ -84,14 +84,21 @@
 			</ul>
 
 			<div class="sidebar-footer" id="sidebar-footer">
-				<ul class="list-unstyled components">
-					<li><a href="/infos" class="sept"> <img id="image_infos"
+				<div class="row">
+					<div class="col-sm-6">
+						<a href="/infos" class="sept"> <img id="image_infos"
 							src="Views/Images/infos.png" th:src="@{Views/Images/infos.png}">
-					</a></li>
-					<li><a href="/logout" class="sept"><img id="image_logout"
-							src="Views/Images/logout.png" th:src="@{Views/Images/logout.png}">
-					</a></li>
-				</ul>
+						</a>
+					</div>
+					<div class="col-sm-6">
+						<div>
+							<a href="/logout" class="sept"><img id="image_logout"
+								src="Views/Images/logout.png"
+								th:src="@{Views/Images/logout.png}"> </a>
+						</div>
+					</div>
+				</div>
+
 			</div>
 
 		</nav>

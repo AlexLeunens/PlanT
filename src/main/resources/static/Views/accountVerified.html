@@ -1,11 +1,19 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Congratulations!</title>
-    </head>
-    <body>
-        <center>
-            <h3>Congratulations! Your account has been activated and email is verified!</h3>
-        </center>
-    </body>
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Email verified !</title>
+<link rel="stylesheet" type="text/css" href="Views/Styles/Mail.css" />
+
+</head>
+<body>
+	<center>
+		<h2>Votre compte est activé</h2>
+		<h2>Bienvenue sur PlanT !</h2>
+		<form action="/admin">
+			<input class="btn btn-primary btn-block green" type="submit"
+				value="Je me connecte">
+		</form>
+
+	</center>
+</body>
 </html>

@@ -7,9 +7,130 @@ li:nth-child(4) a {
 	background-color: #EAE4C2;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	padding: 10px;
-	margin-bottom:15px;
+	margin-bottom: 15px;
+	padding-bottom: 1px;
 }
 
-h1{
-	color:#848484;
+.planning {
+	color: #848484;
+}
+
+.month_default_event_inner {
+	background-color: #EAE4C2;
+}
+
+.month_default_cell_inner {
+	background-color: #B2ABDE;
+	font-size: 1.2em;
+}
+
+.month_default_header_inner {
+	font-size: 1.3em;
+	background-color: #8E70B6;
+	color: white;
+}
+
+.month_default_header {
+	height: 50px;
+}
+
+.month_default_event_inner {
+	color: white;
+}
+
+.blue {
+	border: 3px solid #1e90ff;
+}
+
+.bluef {
+	color: #1e90ff;
+}
+
+.green {
+	border: 3px solid #228b22;
+}
+
+.greenf {
+	color: #228b22;
+}
+
+.brown {
+	border: 3px solid #8b4513;
+}
+
+.brownf {
+	color: #8b4513;
+}
+
+.red {
+	border: 3px solid #ff0080;
+}
+
+.redf {
+	color: #ff0080;
+}
+
+.main {
+	margin-bottom: 15px;
+}
+
+.buttonPara {
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border-radius: 0.6em;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 1em;
+	line-height: 1;
+	margin: 20px;
+	padding: 8px 8px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.buttonPara:hover {
+	color: #fff;
+	outline: 0;
+}
+
+.greenb {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: #228b22;
+	border: 2px solid #228b22;
+}
+
+.greenb:hover {
+	box-shadow: 0 0 40px 40px #228b22 inset;
+}
+
+.brownb {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: #8b4513;
+	border: 2px solid #8b4513;
+}
+
+.brownb:hover {
+	box-shadow: 0 0 40px 40px #8b4513 inset;
+}
+
+.redb {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: #ff0080;
+	border: 2px solid #ff0080;
+}
+
+.redb:hover {
+	box-shadow: 0 0 40px 40px #ff0080 inset;
 }
