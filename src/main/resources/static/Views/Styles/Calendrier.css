@@ -39,3 +39,7 @@ td {
 	background-color: green;
 	height: 20px;
 }
+
+table{
+	border-collapse: collapse;
+}
