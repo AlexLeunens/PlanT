@@ -2,47 +2,46 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-	<div th:replace="templates/header :: header"></div>
-	<title>PlanT - Compte</title>
-	<link rel="stylesheet" type="text/css" href="Views/Styles/MonCompte.css" />
-	<script src="Views/Scripts/MonCompte.js"></script>
-	<script>
-		function switchOnOff() {
-			var s1 = document.getElementsByClassName('switchs');
-			var s2 = document.getElementsByClassName('switchs2');
-			var s3 = document.getElementById('editButton');
-			var s4 = document.getElementById('UpdateButton');
-			for (let i = 0; i < 100; i++) {
-				if (s1[i].style.display === "block") {
-					s1[i].style.display = "none";
-					s4.style.display = "none";
-					s2[i].style.display = "block";
-					document.getElementById("editButton").innerHTML = "Edit";
-					document.getElementById("myForm").reset();
-				} else {
-					s1[i].style.display = "block";
-					s2[i].style.display = "none";
-					s4.style.display = "block";
-					document.getElementById("editButton").innerHTML = "Cancel";
-				}
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Compte</title>
+<link rel="stylesheet" type="text/css" href="Views/Styles/MonCompte.css" />
+<script src="Views/Scripts/MonCompte.js"></script>
+<script>
+	function switchOnOff() {
+		var s1 = document.getElementsByClassName('switchs');
+		var s2 = document.getElementsByClassName('switchs2');
+		var s3 = document.getElementById('editButton');
+		var s4 = document.getElementById('UpdateButton');
+		for (let i = 0; i < 100; i++) {
+			if (s1[i].style.display === "block") {
+				s1[i].style.display = "none";
+				s4.style.display = "none";
+				s2[i].style.display = "block";
+				document.getElementById("editButton").innerHTML = "Edit";
+				document.getElementById("myForm").reset();
+			} else {
+				s1[i].style.display = "block";
+				s2[i].style.display = "none";
+				s4.style.display = "block";
+				document.getElementById("editButton").innerHTML = "Cancel";
 			}
 		}
+	}
 
-		function mouseoverPass() {
-			var obj1 = document.getElementById('pwd1');
-			var obj2 = document.getElementById('pwd2');
-			obj1.type = "text";
-			obj2.type = "text";
-		}
+	function mouseoverPass() {
+		var obj1 = document.getElementById('pwd1');
+		var obj2 = document.getElementById('pwd2');
+		obj1.type = "text";
+		obj2.type = "text";
+	}
 
-		function mouseoutPass(obj) {
-			var obj1 = document.getElementById('pwd1');
-			var obj2 = document.getElementById('pwd2');
-			obj1.type = "password";
-			obj2.type = "password";
-		}
-
-	</script>
+	function mouseoutPass(obj) {
+		var obj1 = document.getElementById('pwd1');
+		var obj2 = document.getElementById('pwd2');
+		obj1.type = "password";
+		obj2.type = "password";
+	}
+</script>
 </head>
 
 <body>
@@ -59,18 +58,20 @@
 					<div class="row Initiale">
 						<div class="col-7">
 
-							<form id="myForm" th:object="${user}" th:action="@{/compte}" method="POST">
+							<form id="myForm" th:object="${user}" th:action="@{/compte}"
+								method="POST">
 
 								<div class="fullBox">Mes informations</div>
 								<div class="emptyBox">
 
-									<div class="switchs2" th:text="${user.name + ' ' + user.surname}"></div>
+									<div class="switchs2"
+										th:text="${user.name + ' ' + user.surname}"></div>
 									<div class="switchs">
 										<input class="formInput" type="text" id="fname" name="fname"
 											th:value="${user.name}" th:field="*{name}" placeholder="Name">
 										<input class="formInput" type="text" id="lname" name="lname"
-											th:value="${user.surname}" th:field="*{surname}" placeholder="Surname">
-										<br>
+											th:value="${user.surname}" th:field="*{surname}"
+											placeholder="Surname"> <br>
 									</div>
 
 									<hr>
@@ -80,33 +81,37 @@
 									<div class="switchs">
 
 										<input class="formInput pwdInput" type="password" id="pwd1"
-											th:value="${user.password}">
-										<input class="formInput pwdInput" type="password" id="pwd2"
+											th:value="${user.password}"> <input
+											class="formInput pwdInput" type="password" id="pwd2"
 											th:value="${user.password}">
 										<!-- For now passwords are not decrypted and will not be modified-->
-										<img src="Views/Images/eye.png" th:src="@{Views/Images/eye.png}" id="visibility"
+										<img src="Views/Images/eye.png"
+											th:src="@{Views/Images/eye.png}" id="visibility"
 											onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" />
 										<br>
 									</div>
 
 									<div class="switchs2">Abonne aux nouvelles</div>
 									<div class="switchs">
-										<input type="checkbox" id="Nouvelles" name="Nouvelles" value="Subscribed">
-										<label for="fruit1">Abonne aux nouvelles</label>
+										<input type="checkbox" id="Nouvelles" name="Nouvelles"
+											value="Subscribed"> <label for="fruit1">Abonne
+											aux nouvelles</label>
 									</div>
 
 									<hr>
 
 									<div class="row">
 										<div class="col-3">Cree le</div>
-										<div class="col-9" th:text="${#dates.format(user.creationDate, 'dd-MM-yyyy')}"></div>
+										<div class="col-9"
+											th:text="${#dates.format(user.creationDate, 'dd-MM-yyyy')}"></div>
 									</div>
 
 								</div>
 								<div class="fullBox">
 									<button type="button" id="editButton" class="neutralButton"
 										onclick="switchOnOff()">Edit</button>
-									<button type="Submit" id="UpdateButton" class="neutralButton right">Update</button>
+									<button type="Submit" id="UpdateButton"
+										class="neutralButton right">Update</button>
 								</div>
 							</form>
 
@@ -128,6 +133,12 @@
 
 							<div class="fullBox Initiale">Parametres</div>
 							<div class="emptyBox">
+								<div>
+									<form action="/admin">
+										<input class="buttonPara green" type="submit" value="Administration du site">
+									</form>
+								</div>
+								<hr>
 								<div>
 									<form th:action="@{/delete}" method="post">
 										<button class="buttonPara red" type="submit">Supprimer mon compte</button>

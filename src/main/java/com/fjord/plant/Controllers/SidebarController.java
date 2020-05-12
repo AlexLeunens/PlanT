@@ -28,6 +28,11 @@ public class SidebarController {
 	public ModelAndView displayHomepage() {
 		return redirect("homepageView");
 	}
+	
+	@GetMapping(value = "/admin")
+	public ModelAndView displayAdmin() {
+		return redirect("Admin");
+	}
 
 	@GetMapping(value = "/calendrier")
 	public ModelAndView displayCalendrier() {
