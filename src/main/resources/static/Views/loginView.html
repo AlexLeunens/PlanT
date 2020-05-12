@@ -1,56 +1,60 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset=utf-8>
 
 <head>
-	<div th:replace="templates/header :: header"></div>
-	<title>Login Page</title>
-	<link rel="stylesheet" type="text/css" href="/Views/Styles/login.css" />
+<div th:replace="templates/header :: header"></div>
+<title>Login Page</title>
+<link rel="stylesheet" type="text/css" href="/Views/Styles/login.css" />
 </head>
 
 <body>
 
 	<div class="wrapper">
-		
+
 		<div class="main">
 			<div class="col-md-offset-3 resp-tabs-container login-top">
 				<form th:action="@{/login}" method="POST" class="form-signin">
-					<h3 class="form-signin-heading " th:text="Connectez-vous"></h3>
+					<h2 class="form-signin-heading ">Bienvenue sur le site PlanT !</h2>
+
+					<h5 class="form-signin-heading ">Connectez vous ou créez un
+						compte svp</h5>
 					<br />
 					<div class="form-group">
 						<div class="input-group">
-							<input type="text" id="email" name="email" placeholder="Email" class="form-control" />
-							<br />
+							<input type="text" id="email" name="email" placeholder="Email"
+								class="form-control" /> <br />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-							<input type="password" th:placeholder="Password" id="password" name="password"
-								class="form-control" placeholder="Mot de passe" />
+							<input type="password" th:placeholder="Password" id="password"
+								name="password" class="form-control" placeholder="Mot de passe" />
 							<br />
 						</div>
 					</div>
-	
+
 					<div align="center" th:if="${param.error}">
-						<p style="font-size: 20; color: #FF1C19;">User Name or
-							Password invalid, please verify</p>
+						<p style="font-size: 20; color: #FF1C19;">Ce username ou mail a déjà été crée, utilisez en un autre svp !</p>
 					</div>
 					<div class="login-bottom form-group">
 						<ul>
 							<li>
 								<div class="input-group">
-									<button type="submit" class="btn btn-primary btn-block">Connexion</button>
+									<button type="submit" class="btn btn-primary btn-block green">Connexion</button>
 								</div>
 							</li>
-							<li><a href="#">mot de passe oublié ?</a></li>
+							<li><a href="#">Mot de passe oublié ?</a></li>
 						</ul>
-	
+
 					</div>
 				</form>
 
 				<form th:action="@{/register}" method="get" class="link">
-					<button type="submit" class="btn btn-link">Inscription</button> 
+					<button type="submit" class="btn btn-link">Je m'inscris</button>
 				</form>
-	
+
 			</div>
 		</div>
 	</div>
