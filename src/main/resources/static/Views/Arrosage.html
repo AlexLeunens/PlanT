@@ -55,11 +55,11 @@
 						eventDeleteHandling : "Disabled",
 						eventMoveHandling : "Update",
 						onEventMoved : function(args) {
-							this.message("Arrosage décalé");
+							this.message("Arrosage dï¿½calï¿½");
 						},
 						eventResizeHandling : "Update",
 						onEventResized : function(args) {
-							this.message("Arrosage modifié");
+							this.message("Arrosage modifiï¿½");
 						},
 						eventClickHandling : "Disabled",
 						eventHoverHandling : "Disabled",
@@ -75,6 +75,8 @@
 					});
 					dp.events.list = [];
 					dp.init();
+
+					$('div:contains("DEMO"):not(:has(div))').css('display', 'none');
 				</script>
 
 
