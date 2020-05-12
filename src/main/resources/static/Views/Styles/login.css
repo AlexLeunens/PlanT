@@ -1,8 +1,13 @@
 body {
-	background: #EAE4C2;
+	background-image: url(../Images/background.jfif);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
-.wrapper{
-	display:flex;
+
+.wrapper {
+	display: flex;
 	min-height: 100vh;
 	justify-content: center;
 	align-items: center;
@@ -13,7 +18,8 @@ body {
 	width: 800px;
 	padding: 40px;
 	background-color: #fff;
-	border-radius:10px;
+	border-radius: 10px;
+	border: solid 20px #EAE4C2;
 }
 
 .login-top {
@@ -27,7 +33,7 @@ body {
 }
 
 input[type="text"], input[type="password"] {
-	padding: 10px 10px 10px 0px;
+	padding: 10px 10px 10px 10px;
 	border: none;
 	border-bottom: 2px solid #999;
 	-webkit-appearance: none;
@@ -37,8 +43,8 @@ input[type="text"], input[type="password"] {
 	margin-top: 2em;
 }
 
-.login-bottom ul{
-	padding:0;
+.login-bottom ul {
+	padding: 0;
 }
 
 .login-bottom li {
@@ -49,7 +55,15 @@ input[type="text"], input[type="password"] {
 	float: right;
 }
 
-.link{
-	display:flex;
+.link {
+	display: flex;
 	justify-content: center;
+}
+
+.green{
+	background-color:#82AE35;
+	border:none;
+}
+.green:hover{
+		background-color:#306724;
 }
