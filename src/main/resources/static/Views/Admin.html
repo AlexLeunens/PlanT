@@ -37,43 +37,23 @@
 
 
 				<div class="row">
-
 					<div class="col-sm-4">
 						<div class="block">
-							<div class="row">
-								<div class="col-sm-7">
-									<h4 th:text="${'Membres : 24'}"></h4>
-								</div>
-								<div class="col-sm-5">
-									<h4>24</h4>
-								</div>
-							</div>
+							<h4 th:text="${'Membres : 24'}"></h4>
 						</div>
 					</div>
+
 
 					<div class="col-sm-3">
 						<div class="block">
-							<div class="row">
-								<div class="col-sm-7">
-									<h4 th:text="${'Admins : 3'}"></h4>
-								</div>
-								<div class="col-sm-5">
-									<h4>3</h4>
-								</div>
-							</div>
+							<h4 th:text="${'Admins : 3'}"></h4>
 						</div>
 					</div>
 
+
 					<div class="col-sm-5">
 						<div class="block">
-							<div class="row">
-								<div class="col-sm-7">
-									<h4 th:text="${'Arrosages réalisés : 27'}"></h4>
-								</div>
-								<div class="col-sm-5">
-									<h4>8</h4>
-								</div>
-							</div>
+							<h4 th:text="${'Arrosages réalisés : 27'}"></h4>
 						</div>
 					</div>
 				</div>
@@ -83,7 +63,7 @@
 					<div class="col-sm-12">
 
 						<div class="block">
-							<h3>Comptes</h3>
+							<h3>Comptes utilisateurs</h3>
 
 							<table>
 								<tr>
@@ -99,7 +79,13 @@
 									<td>Soulage</td>
 									<td>thomas.soulage@isep.fr</td>
 									<td>1/1/2000</td>
-									<td>Promote admin</td>
+									<td>
+										<form>
+											<form method="get" action="/page2">
+												<button type="submit">Promote admin</button>
+											</form>
+										</form>
+									</td>
 									<td>Supprimer</td>
 								</tr>
 								<tr>
@@ -110,13 +96,25 @@
 									<td>Promote admin</td>
 									<td>Supprimer</td>
 								</tr>
+							</table>
+
+							<hr>
+
+							<h3>Comptes admin</h3>
+
+							<table>
+								<tr>
+									<th>Pr&eacute;nom</th>
+									<th>Nom</th>
+									<th>Mail</th>
+									<th>Cr&eacute;ation</th>
+								</tr>
+
 								<tr>
 									<td>Pierre</td>
 									<td>Brillant</td>
 									<td>pierre.brillant@isep.fr</td>
 									<td>1/1/2000</td>
-									<td>Is admin</td>
-									<td>Supprimer</td>
 								</tr>
 							</table>
 
@@ -136,8 +134,7 @@
 								<div class="row radios">
 									<div class="col-sm-6">
 										<span> <input type="radio" id="all" name="destination"
-											value="all"> Tous les
-												utilisateurs
+											value="all"> Tous les utilisateurs
 										</span>
 
 									</div>
