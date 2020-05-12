@@ -39,8 +39,11 @@ public class UserService {
     }
 
     public User updateUser(User user) {
-
         return userRepository.save(user);
+    }
+
+    public void deleteUser(User user) {
+        userRepository.delete(user);
     }
 
     public User getCurrentUser() {

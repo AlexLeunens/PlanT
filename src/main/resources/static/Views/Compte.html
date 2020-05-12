@@ -129,7 +129,9 @@
 							<div class="fullBox Initiale">Parametres</div>
 							<div class="emptyBox">
 								<div>
-									<button class="buttonPara red">Supprimer mon compte</button>
+									<form th:action="@{/delete}" method="post">
+										<button class="buttonPara red" type="submit">Supprimer mon compte</button>
+									</form>
 								</div>
 							</div>
 						</div>

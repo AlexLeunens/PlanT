@@ -30,7 +30,7 @@ public class CompteController {
             bindingResult.rejectValue("email", "error.user", "There was an error getting the user");
         }
         if (!bindingResult.hasErrors()) {
-            
+
             existing.setName(user.getName());
             existing.setSurname(user.getSurname());
 
@@ -39,6 +39,26 @@ public class CompteController {
             result.addObject("user", user);
         }
 
+        return result;
+    }
+
+    @PostMapping(value = "/delete")
+    public ModelAndView deleteUser(@Valid User user, BindingResult bindingResult) {
+
+        ModelAndView result = new ModelAndView();
+        User existing = userService.getCurrentUser();
+
+        if (existing == null || user == null) {
+
+            result.setViewName("redirect:/compte");
+            bindingResult.reject("There was an error getting the user");
+        }
+        if (!bindingResult.hasErrors()) {
+
+            userService.deleteUser(existing);
+            result.setViewName("redirect:/login");
+        }
+        
         return result;
     }
 
