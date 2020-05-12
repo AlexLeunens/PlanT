@@ -85,6 +85,7 @@ hr {
 	font-size: 1em;
 	font-weight: bold;
 	color: #848484;
+	cursor: pointer;
 }
 
 .Initiale {
@@ -115,7 +116,7 @@ img, figure {
 	text-align: center;
 }
 
-.buttonPara:hover, .buttonPara:focus {
+.buttonPara:hover {
 	color: #fff;
 	outline: 0;
 }
