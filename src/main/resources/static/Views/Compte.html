@@ -59,7 +59,7 @@
 						<div class="col-7">
 
 							<form id="myForm" th:object="${user}" th:action="@{/compte}"
-								method="POST">
+								method="POST" onsubmit="return confirm('Voulez vous vraiment mettre à jour vos informations ? owo');">
 
 								<div class="fullBox">Mes informations</div>
 								<div class="emptyBox">
@@ -140,7 +140,7 @@
 								</div>
 								<hr>
 								<div>
-									<form th:action="@{/delete}" method="post">
+									<form th:action="@{/delete}" method="post" onsubmit="return confirm('Voulez vous vraiment supprimer votre compte ? owo');">
 										<button class="buttonPara red" type="submit">Supprimer mon compte</button>
 									</form>
 								</div>
