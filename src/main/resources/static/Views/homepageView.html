@@ -137,8 +137,9 @@
 						<div class="col-sm-4">
 							<div class="mb-4 block">
 								<h4 class="SousSection">Arroseurs du jour 💧</h4>
-								<h6>Lorem Ipsum, de 8h à 9h</h6>
-								<h6>Noël Flantier, de 17 à 18h</h6>
+								<div th:each="arrosage : ${arrosages}">
+									<h6 th:text="${arrosage.text}"> Arroseur<h6>
+								</div>
 							</div>
 						</div>
 					</div>

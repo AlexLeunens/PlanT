@@ -36,6 +36,13 @@ public class EventService {
 
 	public Event findOne(Integer id) {
 		return eventRepository.findById(id).orElse(null);
-	}
+    }
+    
+    public List<Event> findTodayEvents(){
+        LocalDateTime today = LocalDateTime.now().minusDays(1);
+        LocalDateTime tomorrow = today.plusDays(1);
+
+        return eventRepository.findBetween(today, tomorrow);
+    }
 
 }
