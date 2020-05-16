@@ -1,4 +1,6 @@
+@import "Colors.css";
+
 li:nth-child(5) a{
-	color: #fff;
-	background: #8E70B6;
+	color: var(--white);
+	background: var(--lightPurple);
 }

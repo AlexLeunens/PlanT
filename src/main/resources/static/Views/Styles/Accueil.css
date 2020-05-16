@@ -1,28 +1,30 @@
 @import
 	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+@import "Colors.css";
+
 body {
 	font-family: 'Poppins', sans-serif;
 }
 
 li:nth-child(1) a{
-	color: #fff;
-	background: #8E70B6;
+	color: var(--white);
+	background: var(--lightPurple);
 }
 
 a, a:hover, a:focus {
-	color: #fff;
+	color: --white;
 	text-decoration: none;
 }
 
 #content .block {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 }
 
 #content .blockmap {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 }
@@ -38,7 +40,7 @@ a, a:hover, a:focus {
 }
 
 #content .btn {
-	background-color: #8E70B6;
+	background-color: var(--lightPurple);
 	border: none;
 }
 

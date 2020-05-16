@@ -1,10 +1,12 @@
+@import "Colors.css";
+
 li:nth-child(4) a {
-	color: #fff;
-	background: #8E70B6;
+	color: var(--white);
+	background: var(--lightPurple);
 }
 
 .block {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 	margin-bottom: 15px;
@@ -16,7 +18,7 @@ li:nth-child(4) a {
 }
 
 .month_default_event_inner {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 }
 
 .month_default_cell_inner {
@@ -26,8 +28,8 @@ li:nth-child(4) a {
 
 .month_default_header_inner {
 	font-size: 1.3em;
-	background-color: #8E70B6;
-	color: white;
+	background-color:  var(--lightPurple);
+	color: var(--white);
 }
 
 .month_default_header {
@@ -35,39 +37,39 @@ li:nth-child(4) a {
 }
 
 .month_default_event_inner {
-	color: white;
+	color: var(--white);
 }
 
 .blue {
-	border: 3px solid #1e90ff;
+	border: 3px solid var(--blue);
 }
 
 .bluef {
-	color: #1e90ff;
+	color: var(--blue);
 }
 
 .green {
-	border: 3px solid #228b22;
+	border: 3px solid var(--green);
 }
 
 .greenf {
-	color: #228b22;
+	color: var(--green);
 }
 
 .brown {
-	border: 3px solid #8b4513;
+	border: 3px solid var(--brown);
 }
 
 .brownf {
-	color: #8b4513;
+	color: var(--brown);
 }
 
 .red {
-	border: 3px solid #ff0080;
+	border: 3px solid var(--red);
 }
 
 .redf {
-	color: #ff0080;
+	color: var(--red);
 }
 
 .main {
@@ -95,7 +97,7 @@ li:nth-child(4) a {
 }
 
 .buttonPara:hover {
-	color: #fff;
+	color: var(--white);
 	outline: 0;
 }
 
@@ -103,34 +105,34 @@ li:nth-child(4) a {
 	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
 		ease-in-out;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-	color: #228b22;
-	border: 2px solid #228b22;
+	color: var(--green);
+	border: 2px solid var(--green);
 }
 
 .greenb:hover {
-	box-shadow: 0 0 40px 40px #228b22 inset;
+	box-shadow: 0 0 40px 40px var(--green) inset;
 }
 
 .brownb {
 	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
 		ease-in-out;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-	color: #8b4513;
-	border: 2px solid #8b4513;
+	color: var(--brown);
+	border: 2px solid var(--brown);
 }
 
 .brownb:hover {
-	box-shadow: 0 0 40px 40px #8b4513 inset;
+	box-shadow: 0 0 40px 40px var(--brown) inset;
 }
 
 .redb {
 	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
 		ease-in-out;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-	color: #ff0080;
-	border: 2px solid #ff0080;
+	color: var(--red);
+	border: 2px solid var(--red);
 }
 
 .redb:hover {
-	box-shadow: 0 0 40px 40px #ff0080 inset;
+	box-shadow: 0 0 40px 40px var(--red) inset;
 }

@@ -1,45 +1,47 @@
+@import "Colors.css";
+
 li:nth-child(2) a {
-	color: #fff;
-	background: #8E70B6;
+	color: var(--white);
+	background: var(--lightPurple);
 }
 
 .block {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 }
 
-td {
-	width: 8%;
+.head {
+	background-color: var(--lightPurple);
+}
+
+.sample {
+	width: 5%; margin: 0px 1% 0px;
+}
+
+p {
 	text-align: center;
+	color: black;
 }
 
-th, .top {
-	text-align: center;
-	font-size: 1.2em;
-	background-color: #B2ABDE;
-	color: white;
+.flex {
+	display: flex;
 }
 
-td {
-	height: 10px;
-}
-
-.separation {
-	margin-bottom: 2px;
-	border: 1px solid gray;
+.no-padding {
+	padding: 0;
 }
 
 .brown {
-	background-color: brown;
+	background-color: var(--brown);
 	height: 20px;
 }
 
 .green {
-	background-color: green;
+	background-color: var(--green);
 	height: 20px;
 }
 
-table{
-	border-collapse: collapse;
+.grayText {
+	color:var(--gray);
 }

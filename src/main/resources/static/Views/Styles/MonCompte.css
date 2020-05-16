@@ -1,9 +1,11 @@
 @import
 	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+@import "Colors.css";
+
 li:nth-child(6) a {
-	color: #fff;
-	background: #8E70B6;
+	color: var(--white);
+	background: var(--lightPurple);
 }
 
 body {
@@ -11,7 +13,7 @@ body {
 }
 
 a, a:hover, a:focus {
-	color: #fff;
+	color: var(--white);
 	text-decoration: none;
 }
 
@@ -46,12 +48,12 @@ a, a:hover, a:focus {
 }
 
 .fullBox {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 	padding: 10px;
 	font-size: 2em;
 	font-weight: bold;
 	color: #848484;
-	border: 5px solid #EAE4C2;
+	border: 5px solid var(--lightYellow);
 }
 
 .initialInvisible {
@@ -62,18 +64,18 @@ a, a:hover, a:focus {
 	padding: 10px;
 	font-size: 1.5em;
 	color: #b7b7b7;
-	border: 5px solid #EAE4C2;
+	border: 5px solid var(--lightYellow);
 	line-height: 250%;
 }
 
 hr {
-	border: 2px solid #EAE4C2;
+	border: 2px solid var(--lightYellow);
 	margin-right: 50px;
 	margin-left: 50px;
 }
 
 .whiteBox {
-	color: white;
+	color: var(--white);
 	font-size: 1.5em;
 }
 
@@ -81,7 +83,7 @@ hr {
 	border: none;
 	margin: 0;
 	text-decoration: none;
-	background: #EAE4C2;
+	background: var(--lightYellow);
 	font-size: 1em;
 	font-weight: bold;
 	color: #848484;
@@ -117,7 +119,7 @@ img, figure {
 }
 
 .buttonPara:hover {
-	color: #fff;
+	color: var(--white);
 	outline: 0;
 }
 
@@ -137,10 +139,10 @@ img, figure {
 	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
 		ease-in-out;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-	color: #82AE35;
-	border: 2px solid #82AE35;
+	color: var(--lightGreen);
+	border: 2px solid var(--lightGreen);
 }
 
 .green:hover {
-	box-shadow: 0 0 40px 40px #82AE35 inset;
+	box-shadow: 0 0 40px 40px var(--lightGreen) inset;
 }

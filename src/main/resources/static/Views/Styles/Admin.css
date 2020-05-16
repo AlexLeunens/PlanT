@@ -1,15 +1,16 @@
 @charset "ISO-8859-1";
+@import "Colors.css";
 
 .block {
-	background-color: #EAE4C2;
+	background-color: var(--lightYellow);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 	margin-bottom: 15px;
 }
 
 .first {
-	background-color: #8E70B6;
-	color: white;
+	background-color: var(--lightPruple);
+	color: var(--white);
 }
 
 h1 {
@@ -23,7 +24,7 @@ h1 {
 table {
 	border-collapse: collapse;
 	width: 100%;
-	background-color: white;
+	background-color: var(--white);
 }
 
 td, th {
@@ -34,8 +35,8 @@ td, th {
 }
 
 th {
-	background-color: #82AE35;
-	color: white;
+	background-color: var(--lightGreen);
+	color: var(--white);
 }
 
 tr:nth-child(even) {
