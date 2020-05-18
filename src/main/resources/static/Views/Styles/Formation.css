@@ -4,3 +4,32 @@ li:nth-child(5) a{
 	color: var(--white);
 	background: var(--lightPurple);
 }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+	background: var(--lightPurple);
+}
+
+
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+div.content{
+	margin: 2%;
+	padding: 10px;
+	background-color: #EAE4C2;
+	overflow: auto;
+	box-shadow: 2px 2px 2px gray;
+}
+
+div.row{
+	margin-top: 20px;
+	height: auto;
+}
+
+div.info{
+	margin-top:21px;
+	margin-bottom: 10px;
+}

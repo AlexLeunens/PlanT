@@ -5,21 +5,120 @@
 <div th:replace="templates/header :: header"></div>
 <title>PlanT - Formation</title>
 <link rel="stylesheet" type="text/css" href="Views/Styles/Formation.css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 
 
 </head>
 
 <body>
-
 	<div class="wrapper">
 
 		<div th:replace="templates/Sidebar :: sidebar"></div>
 
 		<div class="col-sm-12">
 			<div id="content">
-				<h1>Formation</h1>
-			</div>
-		</div>
-</body>
+				<h1>Formation📚</h1>
 
+								<nav>
+									<div class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
+										
+											<svg id="prev-tab" class="bi bi-chevron-compact-left" width="3%" height="3%" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									  			<path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z" clip-rule="evenodd"/>
+											</svg>
+										
+										<a class="nav-item nav-link active" id="planter-tab"
+											data-toggle="tab" href="#planter" role="tab"
+											aria-controls="planter" aria-selected="true">Planter
+										</a> 
+										<a class="nav-item nav-link" id="arroser-tab" data-toggle="tab"
+											href="#arroser" role="tab" aria-controls="arroser"
+											aria-selected="false">Arroser
+										</a> 
+										<a class="nav-item nav-link"
+											id="saison-tab" data-toggle="tab" href="#saison"
+											role="tab" aria-controls="saison" aria-selected="false">Saison
+										</a>
+										<a class="nav-item nav-link"
+											id="autres-tab" data-toggle="tab" href="#autres"
+											role="tab" aria-controls="autres" aria-selected="false">Autres
+										</a>
+										
+											<svg id="next-tab" class="bi bi-chevron-compact-right" width="3%" height="3%" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									  			<path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z" clip-rule="evenodd"/>
+											</svg>
+										
+									</div>
+								</nav>
+
+								<div class="tab-content" id="nav-tabContent">
+									<div class="tab-pane fade show active" id="planter"
+										role="tabpanel" aria-labelledby="planter-tab">
+										<div class="row h-75">
+											<div  class="left col h-100">
+												<div  class="content info block h-50" id="info">
+													<h4>Information</h4>
+													Σ(っ °Д °;)っ
+												</div>
+												<div  class="content video block h-50" id="video">video here</div>
+											</div>
+											
+											<div class="content texte col h-100" id="texte right">text here</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="arroser" role="tabpanel" 
+										aria-labelledby="arroser-tab">
+										<div class="row h-75">
+											<div  class="left col h-100">
+												<div  class="content info block h-50" id="info">
+													<h4>Information</h4>
+													/(ㄒoㄒ)/~~
+												</div>
+												<div  class="content video block h-50" id="video">video here</div>
+											</div>
+											
+											<div class="content texte col h-100" id="texte right">text here</div>
+										</div>
+					
+									</div>
+									<div class="tab-pane fade" id="saison" role="tabpanel"
+										aria-labelledby="saison-tab">
+										<div class="row h-75">
+											<div  class="left col h-100">
+												<div  class="content info block h-50" id="info">
+													<h4>Information</h4>
+													,,ԾㅂԾ,,
+												</div>
+												<div  class="content video block h-50" id="video">video here</div>
+											</div>
+											
+											<div class="content texte col h-100" id="texte right">text here</div>
+										</div>
+									
+										
+									</div>
+									<div class="tab-pane fade" id="autres" role="tabpanel"
+										aria-labelledby="autres-tab">
+										<div class="row h-75">
+											<div  class="left col h-100">
+												<div  class="content info block h-50" id="info">
+													<h4>Information</h4>
+													O(∩_∩)O<br>
+												</div>
+												<div  class="content video block h-50" id="video">video here</div>
+											</div>
+											
+											<div class="content texte col h-100" id="texte right">text here</div>
+										</div>
+										
+									</div>
+								</div>
+
+							</div>
+							
+
+					
+</body>
+<script type="text/javascript" src="Views/Scripts/Formation.js"></script>
 </html>
