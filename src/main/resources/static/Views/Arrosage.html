@@ -1,0 +1,291 @@
+<html lang="fr">
+<html xmlns:th="https://www.thymeleaf.org">
+<meta charset=utf-8>
+
+<head>
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Arrosage</title>
+<link rel="stylesheet" type="text/css" href="Views/Styles/Arrosage.css" />
+
+<script src="Views/Scripts/Arrosage.js"></script>
+<script src="Views/Scripts/Arrosage2.js"></script>
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div th:replace="templates/Sidebar :: sidebar"></div>
+
+		<div class="col-sm-12">
+			<div id="content">
+
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+				
+				<div class="block">
+					<h2 class="planning" id="date">Planning JardISEP 📅🧐</h2>
+				</div>
+
+				<div class="main">
+					<div id="dp"></div>
+				</div>
+
+				<div class="block blue">
+					<h4 class="bluef">Arrosage</h4>
+					<ul class="tips">
+						<li>Il est inutile d'arroser plusieurs fois par jours ou les
+							jours de pluie. 🌧️</li>
+						<li>Les arrosoirs sont situés au sous sol de l'ISEP, par
+							l'entrée électronique.</li>
+						<li>Un robinet d'eau se trouve sur la terrasse où nous
+							déjeunons souvent. 🚰</li>
+						<li>Arrosez toutes les plantes également ; elles en ont
+							besoin ! 🥰</li>
+
+					</ul>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="block green">
+							<h4 class="greenf">Plantations</h4>
+							<div>La page Calendrier vous apprendra quand planter quoi !</div>
+							<center>
+								<form action="/calendrier">
+									<input class="buttonPara greenb" type="submit"
+										value="En savoir plus">
+								</form>
+							</center>
+
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="block red">
+							<h4 class="redf">Evènements</h4>
+							<div>Rendez vous sur notre page Facebook !</div>
+							<center>
+								<form
+									action="https://www.facebook.com/pages/category/Botanical-Garden/Jardisep-1135386129955641/">
+									<input class="buttonPara redb" type="submit"
+										value="En savoir plus">
+								</form>
+							</center>
+
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="block brown">
+							<h4 class='brownf'>Entretien</h4>
+							<div>Nos formations en ligne sont parfaites pour apprendre
+								à bien entretenir le jardin !</div>
+							<center>
+								<form action="/formation">
+									<input class="buttonPara brownb" type="submit"
+										value="En savoir plus">
+								</form>
+							</center>
+
+						</div>
+					</div>
+				</div>
+
+				<script>
+					var dp = new DayPilot.Month("dp");
+					dp.init();
+					dp.eventEndSpec = "Date";
+
+					// EVENT CREATION
+					dp.onTimeRangeSelected = function(args) {
+						DayPilot.Modal.prompt("Créez un nouvel évènement :",
+								"Evènement").then(function(modal) {
+							dp.clearSelection();
+							if (!modal.result) {
+								return;
+							}
+							var params = {
+								start : args.start.toString(),
+								end : args.end.toString(),
+								text : modal.result,
+								resource : args.resource
+							};
+							$.ajax({
+								type : 'POST',
+								url : '/arrosage/events/create',
+								data : JSON.stringify(params),
+								success : function(data) {
+									dp.events.add(new DayPilot.Event(data));
+									dp.message("Event created");
+								},
+								contentType : "application/json",
+								dataType : 'json'
+							});
+						});
+					};
+
+					// MOVING EVENT
+					dp.onEventMove = function(args) {
+						var params = {
+							id : args.e.id(),
+							start : args.newStart.toString(),
+							end : args.newEnd.toString(),
+							resource : args.newResource
+						};
+						$.ajax({
+							type : 'POST',
+							url : '/arrosage/events/move',
+							data : JSON.stringify(params),
+							success : function(data) {
+								dp.message("Moved");
+							},
+							contentType : "application/json",
+							dataType : 'json'
+						});
+					};
+
+					// EXPANDING EVENT
+					dp.onEventResize = function(args) {
+						var params = {
+							id : args.e.id(),
+							start : args.newStart.toString(),
+							end : args.newEnd.toString(),
+							resource : args.e.resource()
+						};
+						$.ajax({
+							type : 'POST',
+							url : '/arrosage/events/move',
+							data : JSON.stringify(params),
+							success : function(data) {
+								dp.message("Evènement modifié");
+							},
+							contentType : "application/json",
+							dataType : 'json'
+						});
+					};
+
+					dp.onBeforeEventRender = function(args) {
+						args.data.backColor = args.data.color;
+						args.data.areas = [ {
+							top : 4,
+							right : 4,
+							width : 12,
+							height : 14,
+							icon : "icon-triangle-down",
+							visibility : "Visible",
+							action : "ContextMenu",
+							style : "font-size: 12px; background-color: #fff; border: 1px solid #ccc; padding: 2px 2px 0px 2px; cursor:pointer;"
+						} ];
+					};
+
+					// EVENT DELETE & COLOR
+					dp.contextMenu = new DayPilot.Menu({
+						items : [ {
+							text : "Delete",
+							onClick : function(args) {
+								var e = args.source;
+								var params = {
+									id : e.id()
+								};
+								$.ajax({
+									type : 'POST',
+									url : '/arrosage/events/delete',
+									data : JSON.stringify(params),
+									success : function(data) {
+										dp.events.remove(e);
+										dp.message("Evènement supprimé !	");
+									},
+									contentType : "application/json",
+									dataType : 'json'
+								});
+							}
+						}, {
+							text : "-"
+						}, {
+							text : "Arrosage",
+							icon : "icon icon-blue",
+							color : "#1e90ff",
+							onClick : function(args) {
+								updateColor(args.source, args.item.color);
+							}
+						}, {
+							text : "Plantation",
+							icon : "icon icon-green",
+							color : "#228b22",
+							onClick : function(args) {
+								updateColor(args.source, args.item.color);
+							}
+						}, {
+							text : "Entretien",
+							icon : "icon icon-yellow",
+							color : "#8b4513",
+							onClick : function(args) {
+								updateColor(args.source, args.item.color);
+							}
+						}, {
+							text : "Evenement",
+							icon : "icon icon-red",
+							color : "#ff0080",
+							onClick : function(args) {
+								updateColor(args.source, args.item.color);
+							}
+						}, {
+							text : "Autre",
+							color : "auto",
+							onClick : function(args) {
+								updateColor(args.source, args.item.color);
+							}
+						},
+
+						]
+					});
+
+					dp.events.load("/arrosage/events");
+
+					function updateColor(e, color) {
+						var params = {
+							id : e.id(),
+							color : color
+						};
+						$.ajax({
+							type : 'POST',
+							url : '/arrosage/events/setColor',
+							data : JSON.stringify(params),
+							success : function(data) {
+								e.data.color = color;
+								dp.events.update(e);
+							},
+							contentType : "application/json",
+							dataType : 'json'
+						});
+					}
+
+					$(document).ready(function() {
+						$("#weekends").click(function() {
+							dp.showWeekend = $("#weekends").is(":checked");
+							dp.update();
+						});
+					});
+
+					$('div:contains("DEMO"):not(:has(div))').css('display',
+							'none');
+				</script>
+
+
+			</div>
+		</div>
+</body>
+
+</html>

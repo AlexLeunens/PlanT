@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<div th:replace="templates/header :: header"></div>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="/Views/Styles/login.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="main ">
+			<div class="col-md-offset-3 resp-tabs-container login-top">
+				<form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post"
+					class="form-horizontal" role="form">
+					<h2>Inscription</h2>
+
+					<div class="form-group">
+						<div class="input-group">
+							<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								class="validation-message">
+								<p>
+							</label> <input type="text" th:field="*{name}" placeholder="Name"
+								class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<label th:if="${#fields.hasErrors('surname')}"
+								th:errors="*{surname}" class="validation-message">
+								<p>
+							</label> <input type="text" th:field="*{surname}"
+								placeholder="First Name" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" th:field="*{email}" placeholder="Email"
+								class="form-control" />
+							<p>
+								<label th:if="${#fields.hasErrors('email')}"
+									th:errors="*{email}" class="validation-message"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="password" th:field="*{password}"
+								placeholder="Password" class="form-control" />
+							<p>
+								<label th:if="${#fields.hasErrors('password')}"
+									th:errors="*{password}" class="validation-message"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<button type="submit" class="btn btn-primary btn-block">Inscription</button>	
+						</div>
+					</div>
+
+					<h2>
+						<span class="text-success" th:utext="${successMessage}"></span>
+					</h2>
+				</form>
+
+				<form th:action="@{/}" method="get" class="link">
+					<button class="btn btn-link" type="Submit">Page de connexion</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

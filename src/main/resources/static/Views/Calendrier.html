@@ -1,0 +1,269 @@
+<html lang="fr">
+<html xmlns:th="https://www.thymeleaf.org">
+<meta charset=utf-8>
+
+<head>
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Calendrier</title>
+<link rel="stylesheet" type="text/css"
+	href="Views/Styles/Calendrier.css" />
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div th:replace="templates/Sidebar :: sidebar"></div>
+
+		<div id="content">
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('#sidebarCollapse').on('click', function() {
+						$('#sidebar').toggleClass('active');
+					});
+				});
+			</script>
+			<div class="col-sm-12 d-block d-md-none" style="margin-bottom: 10px;">
+				<button type="button" id="sidebarCollapse" class="btn btn-info">
+					<i class="fas fa-align-left"></i>
+				</button>
+			</div>
+			
+			<div class="col-sm-12">
+				<div class="mb-4 block">
+					<div class="grayText">
+						<div style="font-size: 1.6em;">Quand planter quoi ? 🤔
+							Toutes les infos ici ! 😉</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="mb-4 block">
+					<div class="grayText flex">
+						<div>Legende :</div>
+						<div class="brown sample"></div>
+						<div>Planter</div>
+						<div class="green sample"></div>
+						<div>Récolter</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border head">
+				<div class="col-4">
+					<p class="center">Fruits</p>
+				</div>
+				<div class="col-8 flex">
+					<p class="col-1 center d-none d-sm-block">Jan</p>
+					<p class="col-1 center d-none d-sm-block">Fev</p>
+					<p class="col-1 center d-none d-sm-block">Mars</p>
+					<p class="col-1 center d-none d-sm-block">Avr</p>
+					<p class="col-1 center d-none d-sm-block">Mai</p>
+					<p class="col-1 center d-none d-sm-block">Juin</p>
+					<p class="col-1 center d-none d-sm-block">Juil</p>
+					<p class="col-1 center d-none d-sm-block">Août</p>
+					<p class="col-1 center d-none d-sm-block">Sep</p>
+					<p class="col-1 center d-none d-sm-block">Oct</p>
+					<p class="col-1 center d-none d-sm-block">Nov</p>
+					<p class="col-1 center d-none d-sm-block">Dec</p>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Tomate🍅</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-4 brown"></div>
+						<div class="col-7"></div>
+					</div>
+					<div class="row">
+						<div class="col-6"></div>
+						<div class="col-4 green"></div>
+						<div class="col-2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Carottes🥕</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-8 brown"></div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-10 green"></div>
+						<div class="col-2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Radis</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-2"></div>
+						<div class="col-6 brown"></div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-2"></div>
+						<div class="col-7 green"></div>
+						<td class="col-4">
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Courgettes🥒</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-3"></div>
+						<div class="col-4 brown"></div>
+						<div class="col-5"></div>
+					</div>
+					<div class="row">
+						<div class="col-6"></div>
+						<div class="col-4 green"></div>
+						<div class="col-2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Persils🌿</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-12 brown"></div>
+					</div>
+					<div class="row">
+						<div class="col-12 green"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Fraise🍓</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-7"></div>
+						<div class="col-2 brown"></div>
+						<div class="col-3"></div>
+					</div>
+					<div class="row">
+						<div class="col-5"></div>
+						<div class="col-5 green"></div>
+						<div class="col-2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Citrouille / Potirons🎃</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-3"></div>
+						<div class="col-1 brown"></div>
+						<div class="col-8"></div>
+					</div>
+					<div class="row">
+						<div class="col-7"></div>
+						<div class="col-2 green"></div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Betteraves</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-2 brown"></div>
+						<div class="col-9"></div>
+					</div>
+					<div class="row">
+						<div class="col-3"></div>
+						<div class="col-3 green"></div>
+						<div class="col-6"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Salades 🥬</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-2"></div>
+						<div class="col-7 brown"></div>
+						<div class="col-3"></div>
+					</div>
+					<div class="row">
+						<div class="col-3"></div>
+						<div class="col-9 green"></div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Navets</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-2"></div>
+						<div class="col-3 brown"></div>
+						<div class="col-7"></div>
+					</div>
+					<div class="row">
+						<div class="col-4 border-right"></div>
+						<div class="col-7 green"></div>
+						<div class="col-1"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row border">
+				<div class="col-4 border-right">
+					<p class="center">Oignons blancs 🧅</p>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="col-3 no-padding"></div>
+						<div class="col-1 no-padding brown"></div>
+						<div class="col-8 no-padding"></div>
+					</div>
+					<div class="row">
+						<div class="col-8 no-padding"></div>
+						<div class="col-1 no-padding green"></div>
+						<div class="col-3 no-padding"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+</body>
+
+</html>

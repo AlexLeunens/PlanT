@@ -1,0 +1,47 @@
+@import "Colors.css";
+
+li:nth-child(2) a {
+	color: var(--white);
+	background: var(--lightPurple);
+}
+
+.block {
+	background-color: var(--lightYellow);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+}
+
+.head {
+	background-color: var(--lightPurple);
+}
+
+.sample {
+	width: 5%; margin: 0px 1% 0px;
+}
+
+p {
+	text-align: center;
+	color: black;
+}
+
+.flex {
+	display: flex;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.brown {
+	background-color: var(--brown);
+	height: 20px;
+}
+
+.green {
+	background-color: var(--green);
+	height: 20px;
+}
+
+.grayText {
+	color:var(--gray);
+}

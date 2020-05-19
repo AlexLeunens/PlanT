@@ -1,0 +1,148 @@
+@import
+	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@import "Colors.css";
+
+li:nth-child(6) a {
+	color: var(--white);
+	background: var(--lightPurple);
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+a, a:hover, a:focus {
+	color: var(--white);
+	text-decoration: none;
+}
+
+.switchs, #UpdateButton {
+	display: none;
+}
+
+.formInput {
+	padding: 2px;
+	line-height: 100%;
+	color: #b7b7b7;
+	margin-bottom: 10px;
+	width: 49%;
+}
+
+.pwdInput {
+	width: 40%;
+}
+
+.right {
+	float: right;
+}
+
+#visibility {
+	height: 30px;
+	margin-left: 10px;
+}
+
+#same {
+	height: 30px;
+	margin-left: 10px;
+}
+
+.fullBox {
+	background-color: var(--lightYellow);
+	padding: 10px;
+	font-size: 2em;
+	font-weight: bold;
+	color: #848484;
+	border: 5px solid var(--lightYellow);
+}
+
+.initialInvisible {
+	display: none;
+}
+
+.emptyBox {
+	padding: 10px;
+	font-size: 1.5em;
+	color: #b7b7b7;
+	border: 5px solid var(--lightYellow);
+	line-height: 250%;
+}
+
+hr {
+	border: 2px solid var(--lightYellow);
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+.whiteBox {
+	color: var(--white);
+	font-size: 1.5em;
+}
+
+.neutralButton {
+	border: none;
+	margin: 0;
+	text-decoration: none;
+	background: var(--lightYellow);
+	font-size: 1em;
+	font-weight: bold;
+	color: #848484;
+	cursor: pointer;
+}
+
+.Initiale {
+	margin-top: 30px;
+}
+
+img, figure {
+	max-width: 100%;
+}
+
+.buttonPara {
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border-radius: 0.6em;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 1em;
+	line-height: 1;
+	margin: 20px;
+	padding: 8px 8px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.buttonPara:hover {
+	color: var(--white);
+	outline: 0;
+}
+
+.red {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: #e74c3c;
+	border: 2px solid #e74c3c;
+}
+
+.red:hover {
+	box-shadow: 0 0 40px 40px #e74c3c inset;
+}
+
+.green {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: var(--lightGreen);
+	border: 2px solid var(--lightGreen);
+}
+
+.green:hover {
+	box-shadow: 0 0 40px 40px var(--lightGreen) inset;
+}

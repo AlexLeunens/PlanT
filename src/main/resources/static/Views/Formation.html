@@ -1,0 +1,355 @@
+<html lang="fr">
+<html xmlns:th="https://www.thymeleaf.org">
+<meta charset=utf-8>
+
+<head>
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Formation</title>
+<link rel="stylesheet" type="text/css" href="Views/Styles/Formation.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+	crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<div th:replace="templates/Sidebar :: sidebar"></div>
+
+		<div class="col-sm-12">
+			<div id="content">
+
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+
+				<div class="block">
+					<h1>Formations</h1>
+				</div>
+
+				<nav>
+					<div class="nav nav-pills nav-justified" id="nav-tab"
+						role="tablist">
+
+						<svg id="prev-tab" class="bi bi-chevron-compact-left" width="3%"
+							height="3%" viewBox="0 0 16 16" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+									  			<path fill-rule="evenodd"
+								d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
+								clip-rule="evenodd" />
+											</svg>
+
+						<a class="nav-item nav-link active" id="planter-tab"
+							data-toggle="tab" href="#planter" role="tab"
+							aria-controls="planter" aria-selected="true">Planter </a> <a
+							class="nav-item nav-link" id="arroser-tab" data-toggle="tab"
+							href="#arroser" role="tab" aria-controls="arroser"
+							aria-selected="false">Engrais </a> <a class="nav-item nav-link"
+							id="saison-tab" data-toggle="tab" href="#saison" role="tab"
+							aria-controls="saison" aria-selected="false">Saisons </a> <a
+							class="nav-item nav-link" id="autres-tab" data-toggle="tab"
+							href="#autres" role="tab" aria-controls="autres"
+							aria-selected="false">Absences </a>
+
+						<svg id="next-tab" class="bi bi-chevron-compact-right" width="3%"
+							height="3%" viewBox="0 0 16 16" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+									  			<path fill-rule="evenodd"
+								d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
+								clip-rule="evenodd" />
+											</svg>
+
+					</div>
+				</nav>
+
+				<div class="tab-content" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="planter" role="tabpanel"
+						aria-labelledby="planter-tab">
+						<div class="row h-75">
+							<div class="left col h-100">
+								<div class="content info block h-10" id="info">
+									<h4>Comment bien planter dans son potager ?</h4>
+								</div>
+								<div class="content video block h-90" id="video">
+									<iframe width="100%" height="100%"
+										src="https://www.youtube.com/embed/l301QF7g01M"
+										frameborder="0"
+										allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+
+							<div class="content texte col h-100" id="texte right">Nos
+								conseils pour bien préparer la terre Incorporez à la terre,
+								avant ou pendant l’hiver, une fumure de fond (compost, fumier)
+								et un engrais riche en Potassium. Les algues brunes ou le goémon
+								constituent aussi un bon fertilisant riche en oligo-éléments.
+								Ameublissez le sol en profondeur en cassant les grosses mottes.
+								L’utilisation d’un motoculteur ou d’une motobineuse facilite ce
+								travail, mais la terre peut aussi être retournée au moyen d’un
+								outil à main comme une fourche, une bêche ou une grenilette.
+								Affinez la terre en surface avec un râteau. Mélangez du sable à
+								la terre si celle-ci est trop compacte ou argileuse. Ceci permet
+								d’améliorer le réchauffement de la terre au printemps et de
+								mieux drainer les eaux de pluie. Bon à savoir : attention à
+								l’excès d'azote qui rend les plants sensibles aux maladies et
+								favorise la croissance du feuillage au détriment des tubercules.
+
+								La date de mise en terre Pour ne pas que les plants soient
+								fragilisés par des gelées tardives (lune rousse), il est
+								conseillé de les mettre en terre au mois d’avril (mi-mars dans
+								l’ouest de la France et fin avril dans les régions plus
+								froides). Toutefois la culture peut débuter à la fin de l’hiver
+								si les tubercules sont protégés par un voile non tissé, placés
+								sous tunnel ou en serre. Les bases de la plantation Avant de les
+								planter, conservez les plants germés dans un local frais,
+								lumineux (sans soleil direct) et à l'abri du gel. Creusez un
+								sillon de 8 à 10 cm de profondeur ou différents trous au
+								plantoir à bulbe. Déposez les plants (germe vers le haut) et
+								recouvrez-les de terre sans trop tasser. Espacez les plants de
+								35-40 cm et les lignes (rangs ou sillons) de 50-70 cm. Butez la
+								terre régulièrement tout au long de la croissance des plants.
+								Binez la terre pour éliminer les mauvaises herbes et favoriser
+								le drainage. Vous pouvez également déposer une couche de paille
+								autour des pieds pour éviter la pousse des mauvaises herbes et
+								retenir l'humidité du sol en cas de sécheresse. La paille
+								apporte aussi des nutriments à la terre en se décompensant.
+								Arrosez la terre seulement en cas de sécheresse. Coupez les
+								fanes lorsque le feuillage jaunit et flétrit, les tubercules
+								finissent leur maturation (2 à 4 semaines) en terre. Protéger
+								les cultures Pour limiter l’apparition de Mildiou, apportez un
+								traitement préventif à la bouillie bordelaise ou à l'oxychlorure
+								de cuivre aux premières pousses. Traitez ensuite les plants
+								toutes les trois semaines environ. Si vous observez un plant
+								atteint de mildiou, arrachez-le et traitez préventivement les
+								autres plants. Cette affection étant due à un excès d’humidité,
+								effectuez toujours les arrosages sans mouiller le feuillage.
+								Pour éviter l’apparition d’insectes nuisibles, pratiquez la
+								rotation des cultures. Pour ne pas freiner la production,
+								respect0ez les bonnes associations de cutures au potager. Vous
+								pouvez vous informer sur Potiblog des principales maladies qui
+								touchent la pomme de terre et connaître les symptômes et
+								traitements. La récolte (à faire par temps sec) Les variétés
+								dites hâtives ou précoces sont arrachées 60 à 80 jours après la
+								mise en terre tandis que les variétés classiques ne sont
+								récoltées qu’à 90 à 120 jours de la plantation. Pour les
+								variétés les plus tardives, le délai est de 120 à 150 jours.
+
+								Sortez les pieds de la terre avec une fourche ou une houe.
+								Laissez-les sécher au soleil pendant quelques heures.
+								Conservez-les dans un local aéré, sec et à l'abri de la lumière.
+								Bon à savoir : les pommes de terre dites “nouvelles” ou
+								"primeurs", cueillies avant leur maturité, sont à consommer dans
+								les heures qui suivent l’arrachage.</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="arroser" role="tabpanel"
+						aria-labelledby="arroser-tab">
+						<div class="row h-75">
+							<div class="left col h-100">
+								<div class="content info block h-10" id="info">
+									<h4>Comment faire de l'engrais naturel ?</h4>
+								</div>
+								<div class="content video block h-90" id="video">
+									<iframe width="100%" height="100%"
+										src="https://www.youtube.com/embed/m8y2Qd3nCO0"
+										frameborder="0"
+										allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+
+							<div class="content texte col h-100" id="texte right">Les
+								coquilles d'oeuf séchées (oeuf cuit ou cru) Elles sont riches en
+								calcium, magnésium et potassium. En les déposant sur le sol
+								après les avoir broyées en morceaux, vous êtes sûrs que vos
+								plantes font le plein de minéraux au fur et à mesure de leur
+								décomposition. N’hésitez pas non plus à arroser vos parterres
+								avec l’eau de cuisson des œufs. Les peaux de bananes Amateurs de
+								bananes, ne jetez plus les peaux à la poubelle car elles ont une
+								forte teneur en potassium, un nutriment dont les plantes
+								raffolent et qui leur donne des couleurs éclatantes. Déposez de
+								petits morceaux de peau aux pieds des plants ou faites-les
+								tremper dans l’eau qui sert à l’arrosage. Le purin d’orties Le
+								purin d'orties comme le purin de consoude ou de fougère, est un
+								engrais bio, efficace sur les plants du jardin, les fruits du
+								verger et les légumes du potager. Selon le dosage, il peut être
+								utilisé comme fertilisant, comme insecticide, ou comme
+								traitement de certaines maladies. Le seul petit bémol : son
+								odeur quelque peu ragoûtante. Évitez donc de l’utiliser en
+								pulvérisation et stockez-le dans un seau couvert ou un bidon
+								refermable. Après filtration et dilution, ajoutez le purin à
+								votre eau d’arrosage. Vous pouvez également déposer quelques
+								feuilles d’orties fraîches directement dans les trous de
+								plantation lors de la mise en terre de légumes ou de plantes.
+								Les cendres de bois (non traité) Elles sont parfaites pour
+								enrichir le terre du potager ou nourrir une pelouse. Vous n’avez
+								qu’à épandre les cendres sur le sol et les prochaines pluies se
+								chargeront de faire descendre progressivement les nutriments
+								dans la terre. Déposée en couche plus épaisse, la cendre, tout
+								comme les coquilles d’oeuf concassées ou les épines de pin,
+								crée une barrière naturelle pour éloigner les limaces et les
+								escargots des cultures. Les algues marines Si vous avez la
+								chance d’habiter au bord de la mer, les algues marines, vertes
+								ou brunes, constituent un bon moyen d’enrichir la terre en azote
+								et phosphore. Utilisée en paillis fertilisant, elles libèrent
+								leurs minéraux dans la terre en séchant sur le sol. Elles
+								peuvent aussi être émiettées pour être enfouies directement dans
+								la terre. Parallèlement, elles favorisent l’absorption des
+								nutriments par les plantes et augmentent leur résistance face
+								aux maladies. Le compost En aménageant un composteur dans votre
+								jardin, vous pourrez recycler vos déchets verts de tonte et de
+								taille, ainsi que certaines de vos ordures ménagères,
+								pour fabriquer votre propre compost. Après quelques mois de
+								décomposition, en retournant de temps en temps le mélange et en
+								ajoutant un peu d’eau si besoin, vous obtenez un amendement
+								organique prêt à l’emploi. *Remarque : adaptez les apports aux
+								besoins des plantes car un excès d’engrais peut être néfaste et
+								favoriser l’apparition de maladies et de champignons.</div>
+						</div>
+
+					</div>
+					<div class="tab-pane fade" id="saison" role="tabpanel"
+						aria-labelledby="saison-tab">
+						<div class="row h-75">
+							<div class="left col h-100">
+								<div class="content info block h-10" id="info">
+									<h4>Comment pratiquer la rotation des légumes ?</h4>
+								</div>
+								<div class="content video block h-90" id="video">
+									<iframe width="100%" height="100%"
+										src="https://www.youtube.com/embed/SgtawBkCvBM"
+										frameborder="0"
+										allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+
+							<div class="content texte col h-100" id="texte right">Appliquer
+								la rotation des plantations dans son potager est indispensable
+								si l’on souhaite maintenir la terre fertile et éviter
+								l’apparition de maladies. Ainsi, en faisant se succéder sur une
+								même parcelle de potager, des cultures de plantes de familles
+								différentes, ayant des besoins nutritifs spécifiques, on
+								entretient ainsi naturellement le sol. Cette pratique limite par
+								ailleurs la survenue des insectes parasites, des maladies et
+								champignons nuisibles car elle enraye le cycle biologique de ces
+								organismes qui ne parviennent pas à coloniser la terre
+								durablement. Elle a également l’avantage de freiner la
+								propagation des mauvaises herbes. Ce qu’il faut retenir Les
+								légumineuses comme les haricots, les fèves, les lentilles et les
+								pois ont la propriété de fertiliser la terre en fixant l’azote,
+								tandis que les légume-fruits et les légumes feuilles sont
+								gourmands en nutriments. Ainsi, après leur culture, il est
+								important de planter des légumineuses l’année suivante afin de
+								ré-enrichir la terre. Toutefois, pour améliorer la production
+								des légumes fruits et feuilles qui seront semés au printemps, il
+								est conseillé de déposer un peu de fumure de fond à la surface
+								du potager avant l’hiver. Avant de réaliser un plan de potager,
+								il faut déterminer à quelle famille de légumes appartiennent les
+								variétés choisies, afin d'alterner les cultures peu gourmandes
+								avec les cultures nécessitant des quantités plus importantes de
+								matières organiques. Pour optimiser la croissance des plantes et
+								les récoltes, il est conseillé de tenir compte des bonnes et
+								mauvaises associations de légumes au potager. Lorsque le mildiou
+								apparaît sur les plants de tomate ou de pomme de terre, il est
+								impératif de changer l’emplacement des cultures l’année
+								suivante. Pour fertiliser naturellement une terre appauvrie, une
+								autre technique consiste à faire pousser des plantes dites
+								“engrais verts”. Parmi les plus efficaces, on peut citer la
+								phacélie, la moutarde, le seigle ou le colza. Ces végétaux
+								éphémères à croissance rapide retiennent les éléments nutritifs
+								du sol et produisent de la matière organique azotée lorsqu’ils
+								se décomposent. Les familles de légumes Ci-dessous, les
+								principaux groupes de légumes classés du plus exigeant au moins
+								exigeant Légume-fruits : courge, courgette, melon, potiron,
+								aubergine, tomate, poivron, cornichon. Ils nécessitent un sol
+								riche car ils sont particulièrement gourmands. Légume-feuilles :
+								chou, épinard, blette, salade, brocolis, poireau. Ils
+								nécessitent un bon apport en azote. Légume-racines : carotte,
+								betterave, navet, radis, céleri, fenouil, persil. Ils puisent
+								les nutriments davantage en profondeur et nécessitent des
+								apports de fumure modérés. Légume-bulbes : échalote, ail,
+								oignon. Ils ont de faibles besoins nutritifs. Légume-grains
+								(légumineuses) : haricot, lentille, pois, fève. Ils permettent
+								d’améliorer la teneur en azote d’une parcelle.</div>
+						</div>
+
+
+					</div>
+					<div class="tab-pane fade" id="autres" role="tabpanel"
+						aria-labelledby="autres-tab">
+						<div class="row h-75">
+							<div class="left col h-100">
+								<div class="content info block h-10" id="info">
+									<h4>Comment afir lors d'absences prolongées ?</h4>
+								</div>
+								<div class="content video block h-90" id="video">
+									<iframe width="100%" height="100%"
+										src="https://www.youtube.com/embed/YaNhGo3LMlk"
+										frameborder="0"
+										allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+
+							<div class="content texte col h-100" id="texte right">10
+								conseils pratiques pour garantir la santé de vos plants en
+								vacances Renseignez-vous sur les besoins en eau de vos
+								plantes pour savoir si devez prévoir une hydratation en votre
+								absence. Certaines variétés (plantes succulentes, grasses,
+								exotiques) sont capables de vivre plusieurs semaines sur leurs
+								réserves.   Regroupez vos plantes intérieures dans
+								un emplacement frais, modérément lumineux et surtout sans
+								exposition directe au soleil. Ne les placez surtout pas dans
+								l’obscurité.   Déposez les plantes les plus gourmandes en eau
+								dans la baignoire, sur une serviette ou un carton imprégné
+								d’eau, afin qu’elles bénéficient d’une atmosphère humide. Ne les
+								placez pas directement dans l’eau pour ne pas faire pourrir les
+								racines. Vous pouvez également utiliser des soucoupes.   Si vous
+								disposez d’un jardin ou d’un balcon, placez les plantes à
+								l’extérieur. À condition que la température en journée ne soit
+								pas trop écrasante et que les plants bénéficient d’une situation
+								ombragée. Elles profiteront ainsi de l’humidité extérieure de la
+								nuit pour se réhydrater.   Prévoyez un système d'arrosage
+								autonome, (goutte-à-goutte, gel ou système d'irrigation
+								automatique) si vous partez durant un long moment pendant la
+								saison estivale. Reliez-le à un programmateur pour voir gérer
+								les apports d’eau de manière optimale.   Dans les semaines qui
+								précèdent votre départ en vacances, changez la terre de vos
+								plantes en les rempotant avec un terreau “spécial rempotage”
+								pour qu’elles soient plus résistantes au stress.   Évitez les
+								apports d’engrais avant de partir car ils stimulent la
+								croissance des plantes et augmentent leurs besoins en eau.  
+								Retirez toutes les fleurs fanées et les feuilles jaunies ou
+								desséchées pour ne pas épuiser inutilement la plante.   Trempez
+								vos plantes dans un bac d’eau 2 ou 3 jours avant le départ
+								pendant une dizaine de minutes pour imbiber la motte en
+								profondeur et que les racines fassent le plein d’eau.
+								Réhumidifiez la terre le jour du départ.   À votre retour, si la
+								terre d’une plante est sèche, plongez-la dans une bassine d’eau
+								pour réhydrater la motte, jusqu’à ce que plus aucune bulle d’air
+								n’apparaissent à la surface de l’eau, puis remettez-la en pot.</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+</body>
+<script type="text/javascript" src="Views/Scripts/Formation.js"></script>
+</html>

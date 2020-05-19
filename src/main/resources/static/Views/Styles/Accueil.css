@@ -1,0 +1,162 @@
+@import
+	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@import "Colors.css";
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+li:nth-child(1) a{
+	color: var(--white);
+	background: var(--lightPurple);
+}
+
+a, a:hover, a:focus {
+	color: --white;
+	text-decoration: none;
+}
+
+#content .block {
+	background-color: var(--lightYellow);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+}
+
+#content .blockmap {
+	background-color: var(--lightYellow);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+}
+
+#content .titre {
+	margin-left: 10px;
+	float: right;
+	font-size: 3vi;
+}
+
+#content .welcome {
+	display: inline-block;
+}
+
+#content .btn {
+	background-color: var(--lightPurple);
+	border: none;
+}
+
+#content .mapouter {
+	position: relative;
+	text-align: right;
+	width: 100%;
+}
+
+#content .block2 {
+	display: flex;
+	flex-flow: column;
+}
+
+#content .second {
+	display: flex;
+	flex-direction: column;
+}
+
+#content .secondImage {
+	display: flex;
+}
+
+.ct-btn-scroll {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	right: 0;
+	margin: auto;
+	z-index: 9;
+	border-radius: 50%;
+	-webkit-transition: background-color 0.25s ease-in-out;
+	transition: background-color 0.25s ease-in-out;
+}
+
+img, figure {
+	max-width: 100%;
+}
+
+#content .block3 {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+#content .block4 {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+#content .mapouter {
+	position: relative;
+	text-align: right;
+	height: 380px;
+}
+
+#content .gmap_canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+#content .first {
+	height: 100px;
+	vertical-align: middle;
+}
+
+#content .SousSection {
+	text-align: center;
+}
+
+#content #weatherIcon {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 70%;
+}
+
+legend {
+	text-align: center;
+}
+
+#content .mtable {
+	font-size: 1.2em;
+}
+
+.scrollbar {
+	width: 100%;
+	max-width: 100%;
+	height: 400px;
+	background-color: #7bd6fc;
+	overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: rgba(130, 174, 53, 1);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255, 0, 0, 0.4);
+}

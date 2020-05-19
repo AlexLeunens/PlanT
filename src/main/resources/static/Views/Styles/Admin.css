@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+@import "Colors.css";
+
+.block {
+	background-color: var(--lightYellow);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.first {
+	background-color: var(--lightPruple);
+	color: var(--white);
+}
+
+h1 {
+	font-size: 2em;
+}
+
+.right {
+	float: right;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	background-color: var(--white);
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 3px;
+	height: 15px;
+}
+
+th {
+	background-color: var(--lightGreen);
+	color: var(--white);
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 10px
+}
+
+.center {
+	text-align: center;
+}

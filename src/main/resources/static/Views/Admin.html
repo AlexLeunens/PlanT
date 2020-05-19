@@ -1,0 +1,194 @@
+<!doctype html>
+
+<html lang="fr">
+<html xmlns:th="https://www.thymeleaf.org">
+<meta charset=utf-8>
+
+<head>
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Admin</title>
+<link rel="stylesheet" type="text/css" href="Views/Styles/Admin.css" />
+<script src="Views/Scripts/Admin.js"></script>
+
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div th:replace="templates/Sidebar :: sidebar"></div>
+
+		<div class="col-sm-12">
+			<div id="content">
+
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+
+				<div class="block first">
+					<div class="row">
+						<div class="col-sm-5">
+							<h1>Page d'administration</h1>
+						</div>
+						<div class="col-sm-7">
+							<div>
+								<div th:text="${'Connecté en tant que '+user.name}"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="block">
+							<h4 th:text="${'Membres : 24'}"></h4>
+						</div>
+					</div>
+
+
+					<div class="col-sm-3">
+						<div class="block">
+							<h4 th:text="${'Admins : 3'}"></h4>
+						</div>
+					</div>
+
+
+					<div class="col-sm-5">
+						<div class="block">
+							<h4 th:text="${'Arrosages réalisés : 27'}"></h4>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-sm-12">
+
+						<div class="block">
+							<h3>Comptes utilisateurs</h3>
+
+							<table>
+								<tr>
+									<th>Pr&eacute;nom</th>
+									<th>Nom</th>
+									<th>Mail</th>
+									<th>Cr&eacute;ation</th>
+									<th></th>
+									<th></th>
+								</tr>
+								<tr>
+									<td>Thomas</td>
+									<td>Soulage</td>
+									<td>thomas.soulage@isep.fr</td>
+									<td>1/1/2000</td>
+									<td>
+										<form>
+											<form method="get" action="/page2">
+												<button type="submit">Promote admin</button>
+											</form>
+										</form>
+									</td>
+									<td>Supprimer</td>
+								</tr>
+								<tr>
+									<td>Celine</td>
+									<td>Carré</td>
+									<td>celine.carré@isep.fr</td>
+									<td>1/1/2000</td>
+									<td>Promote admin</td>
+									<td>Supprimer</td>
+								</tr>
+							</table>
+
+							<hr>
+
+							<h3>Comptes admin</h3>
+
+							<table>
+								<tr>
+									<th>Pr&eacute;nom</th>
+									<th>Nom</th>
+									<th>Mail</th>
+									<th>Cr&eacute;ation</th>
+								</tr>
+
+								<tr>
+									<td>Pierre</td>
+									<td>Brillant</td>
+									<td>pierre.brillant@isep.fr</td>
+									<td>1/1/2000</td>
+								</tr>
+								<tr>
+									<td>Raphael</td>
+									<td>Caillon</td>
+									<td>archange618@gmail.com</td>
+									<td>12/05/2000</td>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-sm-12">
+
+						<div class="block">
+							<h3>Newsletter</h3>
+							<form action="/action_page.php">
+
+								<div class="row radios">
+									<div class="col-sm-6">
+										<span> <input type="radio" id="all" name="destination"
+											value="all"> Tous les utilisateurs
+										</span>
+
+									</div>
+									<div class="col-sm-6">
+										<span> <input type="radio" id="admins"
+											name="destination" value="admins"> Tous les admins
+										</span>
+
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-9">
+										<input type="text" id="Sujet" name="Sujet" placeholder="Sujet">
+									</div>
+									<div class="col-sm-3">
+										<input type="submit" value="Publier">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<input type="text" id="Contenu" name="Contenu"
+											placeholder="Contenu" rows="5">
+									</div>
+								</div>
+							</form>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+</body>
+
+</html>

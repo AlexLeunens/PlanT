@@ -1,0 +1,138 @@
+@import "Colors.css";
+
+li:nth-child(4) a {
+	color: var(--white);
+	background: var(--lightPurple);
+}
+
+.block {
+	background-color: var(--lightYellow);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin-bottom: 15px;
+	padding-bottom: 1px;
+}
+
+.planning {
+	color: #848484;
+}
+
+.month_default_event_inner {
+	background-color: var(--lightYellow);
+}
+
+.month_default_cell_inner {
+	background-color: #B2ABDE;
+	font-size: 1.2em;
+}
+
+.month_default_header_inner {
+	font-size: 1.3em;
+	background-color:  var(--lightPurple);
+	color: var(--white);
+}
+
+.month_default_header {
+	height: 50px;
+}
+
+.month_default_event_inner {
+	color: black;
+}
+
+.blue {
+	border: 3px solid var(--blue);
+}
+
+.bluef {
+	color: var(--blue);
+}
+
+.green {
+	border: 3px solid var(--green);
+}
+
+.greenf {
+	color: var(--green);
+}
+
+.brown {
+	border: 3px solid var(--brown);
+}
+
+.brownf {
+	color: var(--brown);
+}
+
+.red {
+	border: 3px solid var(--red);
+}
+
+.redf {
+	color: var(--red);
+}
+
+.main {
+	margin-bottom: 15px;
+}
+
+.buttonPara {
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border-radius: 0.6em;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 1em;
+	line-height: 1;
+	margin: 20px;
+	padding: 8px 8px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.buttonPara:hover {
+	color: var(--white);
+	outline: 0;
+}
+
+.greenb {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: var(--green);
+	border: 2px solid var(--green);
+}
+
+.greenb:hover {
+	box-shadow: 0 0 40px 40px var(--green) inset;
+}
+
+.brownb {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: var(--brown);
+	border: 2px solid var(--brown);
+}
+
+.brownb:hover {
+	box-shadow: 0 0 40px 40px var(--brown) inset;
+}
+
+.redb {
+	-webkit-transition: box-shadow 300ms ease-in-out, color 300ms
+		ease-in-out;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	color: var(--red);
+	border: 2px solid var(--red);
+}
+
+.redb:hover {
+	box-shadow: 0 0 40px 40px var(--red) inset;
+}

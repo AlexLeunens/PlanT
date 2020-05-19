@@ -1,0 +1,39 @@
+<html lang="fr">
+<html xmlns:th="https://www.thymeleaf.org">
+<meta charset=utf-8>
+
+<head>
+<div th:replace="templates/header :: header"></div>
+<title>PlanT - Jardin</title>
+<link rel="stylesheet" type="text/css" href="Views/Styles/Jardin.css" />
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div th:replace="templates/Sidebar :: sidebar"></div>
+
+		<div class="col-sm-12">
+			<div id="content">
+
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+				<h1>Jardin en développement 🛠️</h1>
+			</div>
+		</div>
+</body>
+
+</html>
