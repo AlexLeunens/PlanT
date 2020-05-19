@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="Views/Styles/Arrosage.css" />
 
 <script src="Views/Scripts/Arrosage.js"></script>
+<script src="Views/Scripts/Arrosage2.js"></script>
 
 </head>
 
@@ -20,8 +21,22 @@
 		<div class="col-sm-12">
 			<div id="content">
 
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+				
 				<div class="block">
-					<h2 class="planning">Planning JardISEP 📅🧐</h2>
+					<h2 class="planning" id="date">Planning JardISEP 📅🧐</h2>
 				</div>
 
 				<div class="main">

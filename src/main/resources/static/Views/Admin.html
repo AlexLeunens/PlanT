@@ -22,6 +22,20 @@
 		<div class="col-sm-12">
 			<div id="content">
 
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+
 				<div class="block first">
 					<div class="row">
 						<div class="col-sm-5">
@@ -121,7 +135,7 @@
 									<td>Caillon</td>
 									<td>archange618@gmail.com</td>
 									<td>12/05/2000</td>
-								</tr>	
+								</tr>
 							</table>
 
 						</div>

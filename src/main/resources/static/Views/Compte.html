@@ -53,13 +53,28 @@
 		<div class="col-sm-12">
 			<div id="content">
 
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+				<div class="col-sm-12 d-block d-md-none"
+					style="margin-bottom: 10px;">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i>
+					</button>
+				</div>
+
 				<div class="container">
 
 					<div class="row Initiale">
 						<div class="col-7">
 
 							<form id="myForm" th:object="${user}" th:action="@{/compte}"
-								method="POST" onsubmit="return confirm('Voulez vous vraiment mettre à jour vos informations ? owo');">
+								method="POST"
+								onsubmit="return confirm('Voulez vous vraiment mettre à jour vos informations ? owo');">
 
 								<div class="fullBox">Mes informations</div>
 								<div class="emptyBox">
@@ -135,13 +150,16 @@
 							<div class="emptyBox">
 								<div>
 									<form action="/admin">
-										<input class="buttonPara green" type="submit" value="Administration du site">
+										<input class="buttonPara green" type="submit"
+											value="Administration du site">
 									</form>
 								</div>
 								<hr>
 								<div>
-									<form th:action="@{/delete}" method="post" onsubmit="return confirm('Voulez vous vraiment supprimer votre compte ? owo');">
-										<button class="buttonPara red" type="submit">Supprimer mon compte</button>
+									<form th:action="@{/delete}" method="post"
+										onsubmit="return confirm('Voulez vous vraiment supprimer votre compte ? owo');">
+										<button class="buttonPara red" type="submit">Supprimer
+											mon compte</button>
 									</form>
 								</div>
 							</div>

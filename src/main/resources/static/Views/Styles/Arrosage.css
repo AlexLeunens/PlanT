@@ -37,7 +37,7 @@ li:nth-child(4) a {
 }
 
 .month_default_event_inner {
-	color: var(--white);
+	color: black;
 }
 
 .blue {

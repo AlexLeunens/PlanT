@@ -29,6 +29,13 @@
 				<div>
 					<div class="row">
 
+						<script type="text/javascript">
+							$(document).ready(function() {
+								$('#sidebarCollapse').on('click', function() {
+									$('#sidebar').toggleClass('active');
+								});
+							});
+						</script>
 						<div class="col-sm-12 d-block d-md-none"
 							style="margin-bottom: 10px;">
 							<button type="button" id="sidebarCollapse" class="btn btn-info">
@@ -138,7 +145,9 @@
 							<div class="mb-4 block">
 								<h4 class="SousSection">Arroseurs du jour 💧</h4>
 								<div th:each="arrosage : ${arrosages}">
-									<h6 th:text="${arrosage.text}"> Arroseur<h6>
+									<h6 th:text="${arrosage.text}">
+										Arroseur
+										<h6>
 								</div>
 							</div>
 						</div>
@@ -164,7 +173,8 @@
 
 							<div class="mb-3  block block4">
 								<h4 class="SousSection" id="factAnnouncer">Plant Fact #0</h4>
-								<div id="dayFact" style="text-align: justify; text-justify: inter-word;">
+								<div id="dayFact"
+									style="text-align: justify; text-justify: inter-word;">
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 									eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 							</div>
